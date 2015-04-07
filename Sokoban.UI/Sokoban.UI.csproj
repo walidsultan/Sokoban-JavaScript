@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.4.4\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -74,7 +77,67 @@
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
+    <Content Include="JavaScript\Game\Helper.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />
+    <Content Include="Levels\MicroCosmos\level0.xml" />
+    <Content Include="Levels\MicroCosmos\level1.xml" />
+    <Content Include="Levels\MicroCosmos\level10.xml" />
+    <Content Include="Levels\MicroCosmos\level11.xml" />
+    <Content Include="Levels\MicroCosmos\level12.xml" />
+    <Content Include="Levels\MicroCosmos\level13.xml" />
+    <Content Include="Levels\MicroCosmos\level14.xml" />
+    <Content Include="Levels\MicroCosmos\level15.xml" />
+    <Content Include="Levels\MicroCosmos\level16.xml" />
+    <Content Include="Levels\MicroCosmos\level17.xml" />
+    <Content Include="Levels\MicroCosmos\level18.xml" />
+    <Content Include="Levels\MicroCosmos\level19.xml" />
+    <Content Include="Levels\MicroCosmos\level2.xml" />
+    <Content Include="Levels\MicroCosmos\level20.xml" />
+    <Content Include="Levels\MicroCosmos\level21.xml" />
+    <Content Include="Levels\MicroCosmos\level22.xml" />
+    <Content Include="Levels\MicroCosmos\level23.xml" />
+    <Content Include="Levels\MicroCosmos\level24.xml" />
+    <Content Include="Levels\MicroCosmos\level25.xml" />
+    <Content Include="Levels\MicroCosmos\level26.xml" />
+    <Content Include="Levels\MicroCosmos\level27.xml" />
+    <Content Include="Levels\MicroCosmos\level28.xml" />
+    <Content Include="Levels\MicroCosmos\level29.xml" />
+    <Content Include="Levels\MicroCosmos\level3.xml" />
+    <Content Include="Levels\MicroCosmos\level30.xml" />
+    <Content Include="Levels\MicroCosmos\level31.xml" />
+    <Content Include="Levels\MicroCosmos\level32.xml" />
+    <Content Include="Levels\MicroCosmos\level33.xml" />
+    <Content Include="Levels\MicroCosmos\level34.xml" />
+    <Content Include="Levels\MicroCosmos\level35.xml" />
+    <Content Include="Levels\MicroCosmos\level36.xml" />
+    <Content Include="Levels\MicroCosmos\level37.xml" />
+    <Content Include="Levels\MicroCosmos\level38.xml" />
+    <Content Include="Levels\MicroCosmos\level39.xml" />
+    <Content Include="Levels\MicroCosmos\level4.xml" />
+    <Content Include="Levels\MicroCosmos\level40.xml" />
+    <Content Include="Levels\MicroCosmos\level5.xml" />
+    <Content Include="Levels\MicroCosmos\level6.xml" />
+    <Content Include="Levels\MicroCosmos\level7.xml" />
+    <Content Include="Levels\MicroCosmos\level8.xml" />
+    <Content Include="Levels\MicroCosmos\level9.xml" />
+    <Content Include="Levels\SokoHard\Copy %2810%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %2811%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %2812%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %2813%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %2814%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %2815%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %286%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %287%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %288%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\Copy %289%29 of sokohard3.xml" />
+    <Content Include="Levels\SokoHard\sokohard1.xml" />
+    <Content Include="Levels\SokoHard\sokohard2.xml" />
+    <Content Include="Levels\SokoHard\sokohard3.xml" />
+    <Content Include="Levels\SokoHard\sokohard4.xml" />
+    <Content Include="Levels\SokoHard\sokohard5.xml" />
+    <Content Include="Levels\SokoHard\sokohard6.xml" />
+    <Content Include="Levels\SokoHard\sokohard7.xml" />
+    <Content Include="Levels\SokoHard\sokohard8.xml" />
     <Content Include="Pages\Game.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -85,6 +148,90 @@
     <Content Include="Styles\Game.less">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="packages.config" />
+    <Content Include="Levels\microban\microban 100.gam" />
+    <Content Include="Levels\microban\microban 146.gam" />
+    <Content Include="Levels\microban\microban 147.gam" />
+    <Content Include="Levels\microban\microban 152.gam" />
+    <Content Include="Levels\microban\microban 154.gam" />
+    <Content Include="Levels\microban\microban 3.gam" />
+    <Content Include="Levels\microban\microban 60.gam" />
+    <Content Include="Levels\microban\microban 61.gam" />
+    <Content Include="Levels\microban\microban 62.gam" />
+    <Content Include="Levels\microban\microban 64.gam" />
+    <Content Include="Levels\microban\microban 65.gam" />
+    <Content Include="Levels\microban\microban 66.gam" />
+    <Content Include="Levels\microban\microban 70.gam" />
+    <Content Include="Levels\microban\microban 71.gam" />
+    <Content Include="Levels\microban\microban 72.gam" />
+    <Content Include="Levels\microban\microban 74.gam" />
+    <Content Include="Levels\microban\microban 75.gam" />
+    <Content Include="Levels\microban\microban 76.gam" />
+    <Content Include="Levels\microban\microban 77.gam" />
+    <Content Include="Levels\microban\microban 78.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 16.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 17.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 18.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 19.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 2.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 20.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 21.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 22.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 23.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 24.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 25.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 26.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 27.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 28.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 29.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 3.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 30.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 31.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 32.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 33.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 34.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 35.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 36.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 37.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 38.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 39.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 4.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 40.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 5.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 6.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 7.gam" />
+    <Content Include="Levels\nabokocosmos\naboko cosom 8.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 10.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 11.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 12.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 13.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 14.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 15.gam" />
+    <Content Include="Levels\nabokocosmos\naoboko cosmos 9.gam" />
+    <Content Include="Levels\Scoria\scoria 10.gam" />
+    <Content Include="Levels\Scoria\scoria 13.gam" />
+    <Content Include="Levels\Scoria\scoria 16.gam" />
+    <Content Include="Levels\Scoria\scoria 17.gam" />
+    <Content Include="Levels\Scoria\scoria 18.gam" />
+    <Content Include="Levels\Scoria\scoria 19.gam" />
+    <Content Include="Levels\Scoria\scoria 20.gam" />
+    <Content Include="Levels\Scoria\scoria 4.gam" />
+    <Content Include="Levels\Scoria\scoria 6.gam" />
+    <Content Include="Levels\SokoGen\sokogen71.gam" />
+    <Content Include="Levels\SokoGen\sokogen72.gam" />
+    <Content Include="Levels\SokoGen\sokogen73.gam" />
+    <Content Include="Levels\SokoGen\sokogen74.gam" />
+    <Content Include="Levels\SokoGen\sokogen75.gam" />
+    <Content Include="Levels\SokoGen\sokogen77.gam" />
+    <Content Include="Levels\SokoGen\sokogen78.gam" />
+    <Content Include="Levels\SoloBan\scattered.gam" />
+    <Content Include="Levels\SoloBan\solo ban 3.gam" />
+    <Content Include="Levels\SoloBan\solo ban 4gam.gam" />
+    <Content Include="Levels\SoloBan\solo ban 5.gam" />
+    <Content Include="Levels\SoloBan\solo ban.gam" />
+    <Content Include="Levels\SoloBan\The Run.gam" />
+    <Content Include="Levels\SoloBan\The Spiral.gam" />
+    <Content Include="Levels\SoloBan\which way.gam" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -92,9 +239,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="JavaScript\Game\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
