@@ -78,6 +78,7 @@
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
     <Content Include="JavaScript\Game\Helper.js" />
+    <Content Include="JavaScript\Game\Main.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />
     <Content Include="Levels\MicroCosmos\level0.xml" />
     <Content Include="Levels\MicroCosmos\level1.xml" />
