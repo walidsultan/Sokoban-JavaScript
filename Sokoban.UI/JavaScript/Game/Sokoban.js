@@ -19,7 +19,9 @@
                             block = InitializeView('app.ui.Floor');
                             break;
                         case '$':
-                            block = InitializeView('app.ui.Box');
+                            block = InitializeView('app.ui.Floor');
+                            var box = InitializeView('app.ui.Box');
+                            box.draw(j, i);
                             break;
                         case '.':
                             block = InitializeView('app.ui.Target');
