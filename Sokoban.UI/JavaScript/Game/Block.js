@@ -28,6 +28,11 @@
             if (this.type = 'box') {
                 $(window).trigger('box.' + this.guid + '.created');
             }
+        },
+        setPosition: function (left, top) {
+            this.left = left;
+            this.top = top;
+            this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
         }
     });
 })(skui.resolve('app.ui'));

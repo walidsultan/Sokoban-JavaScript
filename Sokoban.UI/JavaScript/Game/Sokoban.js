@@ -1,7 +1,8 @@
 ﻿(function (ns) {
     ns.Sokoban = skui.extend(function () {
-
+        this.player = null;
         this.initialize();
+        $(window).on('handleInput', this.handleMovement.bind(this))
     }, {
         initialize: function () {
             var level1 = '../Levels/MicroCosmos/level0.xml';
@@ -27,13 +28,13 @@
                             break;
                         case '+':
                             block = InitializeView('app.ui.Target');
-                            var player = InitializeView('app.ui.Player');
-                            player.draw(j, i);
+                            this.player = InitializeView('app.ui.Player');
+                            this.player.draw(j, i);
                             break;
                         case '@':
                             block = InitializeView('app.ui.Floor');
-                            var player = InitializeView('app.ui.Player');
-                            player.draw(j, i);
+                            this.player = InitializeView('app.ui.Player');
+                            this.player.draw(j, i);
                             break;
                         case '*':
                             block = InitializeView('app.ui.Target');
@@ -46,6 +47,22 @@
                         block.draw(j, i);
                     }
                 }
+            }
+        },
+        handleMovement: function (e,data) {
+            switch (data.direction) {
+                case 'left':
+                    this.player.setPosition(this.player.left - 1, this.player.top);
+                    break;
+                case 'top':
+                    this.player.setPosition(this.player.left , this.player.top-1);
+                    break;
+                case 'right':
+                    this.player.setPosition(this.player.left + 1, this.player.top);
+                    break;
+                case 'down':
+                    this.player.setPosition(this.player.left, this.player.top +1);
+                    break;
             }
         }
     });
