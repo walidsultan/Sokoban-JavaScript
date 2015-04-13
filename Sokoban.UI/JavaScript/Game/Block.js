@@ -25,9 +25,10 @@
             this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
             $('body').append(this.domElement);
 
-            if (this.type = 'box') {
+            if (this.type == 'box') {
                 $(window).trigger('box.' + this.guid + '.created');
             }
+            $(window).trigger('block.created', [this]);
         },
         setPosition: function (left, top) {
             this.left = left;
