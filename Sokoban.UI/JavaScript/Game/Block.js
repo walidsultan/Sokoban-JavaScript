@@ -6,6 +6,7 @@
             this.left = -1;
             this.top = -1;
             this.domElement = null;
+            this.guid = guid();
         },
         setType: function (value) {
             this.type = value;
@@ -23,6 +24,10 @@
             this.domElement = $('<div class="block ' + this.type + '"></div>');
             this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
             $('body').append(this.domElement);
+
+            if (this.type = 'box') {
+                $(window).trigger('box.' + this.guid + '.created');
+            }
         }
     });
 })(skui.resolve('app.ui'));

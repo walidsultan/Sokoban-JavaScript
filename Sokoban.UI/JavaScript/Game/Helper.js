@@ -73,7 +73,7 @@ var InitializeView = (function ($) {
 
         } catch (ex) {
             args = args || "";
-            console.log("View Initialization Error");
+            console.log("View Initialization Error. " + ex.message);
             return null;
         }
     };
@@ -95,7 +95,7 @@ var InitializeView = (function ($) {
         catch (ex) {
             args = args || "";
             views = views || {};
-            console.log("View Initialization Error");
+            console.log("View Initialization Error. "+ ex.message);
             return views;
         }
     };
@@ -113,4 +113,14 @@ function loadXMLDoc(filename) {
     xhttp.open("GET", filename, false);
     xhttp.send();
     return xhttp.responseXML;
+}
+
+function guid() {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000)
+          .toString(16)
+          .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+      s4() + '-' + s4() + s4() + s4();
 }
