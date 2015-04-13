@@ -86,7 +86,9 @@ var InitializeView = (function ($) {
             args = Array.prototype.slice.call(arguments, 1);
             if (args.length == 0) {
                 views = initialize(obj);
-            } 
+            } else {
+                views = initialize(obj, args[0]);
+            }
 
             return views;
         }

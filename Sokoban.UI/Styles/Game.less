@@ -4,3 +4,31 @@
     width:1280px;
     margin:0;
 }
+
+.block{
+    position:absolute;
+    background-size:60px;
+    width:60px;
+    height:60px;
+    background-repeat:no-repeat;
+    &.wall{
+         background-image: url( '../Images/Wall.png')  ;
+    }
+    &.box{
+         background-image: url( '../Images/Box.png') ;
+         z-index:10;
+         &.onTarget{
+            background-image: url( '../Images/BoxOnTarget.png') ;
+         }
+    }
+    &.floor{
+         background-image: url( '../Images/Floor.png');
+    }
+    &.target{
+         background-image: url( '../Images/Target.png');
+    }
+    &.player{
+         background-image: url( '../Images/Ghost.png');
+         z-index:10;
+    }
+}
