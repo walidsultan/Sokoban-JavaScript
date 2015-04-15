@@ -3,8 +3,11 @@
         $(window).on('findPath',this.findPath.bind(this));
         this.init();
     }, {
-        findPath: function (e,targetBox) {
-            debugger;
+        findPath: function (e, targetBox) {
+            var selectedBox = this.getSelectedBox();
+            if (selectedBox != null) {
+                debugger;
+            }
         }
     });
 })(skui.resolve('app.ui'));
