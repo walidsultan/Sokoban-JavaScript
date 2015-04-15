@@ -9,14 +9,18 @@
 
             for (i = 0; i < levelRows.length; i++) {
                 var row = levelRows[i].childNodes[0].nodeValue;
+                var isWallDrawn = false;
                 for (var j = 0; j < row.length; j++) {
                     var block = null;
                     switch (row[j]) {
                         case '#':
                             block = InitializeView('app.ui.Wall');
+                            isWallDrawn = true;
                             break;
                         case ' ':
-                            block = InitializeView('app.ui.Floor');
+                            if (isWallDrawn) {
+                                block = InitializeView('app.ui.Floor');
+                            }
                             break;
                         case '$':
                             block = InitializeView('app.ui.Floor');
