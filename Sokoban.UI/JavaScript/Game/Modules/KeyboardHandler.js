@@ -6,16 +6,16 @@
             e.preventDefault();
             switch (e.keyCode) {
                 case 37: //left
-                    $(window).trigger('handleInput', {direction:'left'});
+                    $(window).trigger('handleInput', { direction: Directions.left });
                     break;
                 case 38: //top
-                    $(window).trigger('handleInput', { direction: 'top' });
+                    $(window).trigger('handleInput', { direction: Directions.top });
                     break;
                 case 39: //right
-                    $(window).trigger('handleInput', { direction: 'right' });
+                    $(window).trigger('handleInput', { direction: Directions.right });
                     break;
                 case 40: //down
-                    $(window).trigger('handleInput', { direction: 'down' });
+                    $(window).trigger('handleInput', { direction: Directions.down });
                     break;
             }
         }

@@ -77,11 +77,12 @@
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
+    <Content Include="JavaScript\Game\Utility\Enums.js" />
     <Content Include="JavaScript\Game\Objects\Block.js" />
     <Content Include="JavaScript\Game\Objects\Box.js" />
     <Content Include="JavaScript\Game\Modules\CollisionDetector.js" />
     <Content Include="JavaScript\Game\Objects\Floor.js" />
-    <Content Include="JavaScript\Game\Helper.js" />
+    <Content Include="JavaScript\Game\Utility\Helper.js" />
     <Content Include="JavaScript\Game\Modules\KeyboardHandler.js" />
     <Content Include="JavaScript\Game\Main.js" />
     <Content Include="JavaScript\Game\Objects\Player.js" />

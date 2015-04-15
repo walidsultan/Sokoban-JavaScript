@@ -6,7 +6,7 @@
         $(window).on('handleInput', this.handleMovement.bind(this))
     }, {
         addBlockToArray: function (e, data) {
-            if (data.type == 'player') {
+            if (data.type ==ObjectTypes.player) {
                 this.player = data;
             } else {
                 this.allBlocks[this.allBlocks.length] = data;
@@ -17,30 +17,30 @@
             var targetTop = this.player.top;
 
             switch (data.direction) {
-                case 'left':
+                case Directions.left:
                     targetLeft--;
                     break;
-                case 'top':
+                case Directions.top :
                     targetTop--;
                     break;
-                case 'right':
+                case Directions.right:
                     targetLeft++;
                     break;
-                case 'down':
+                case Directions.down:
                     targetTop++;
                     break;
             }
 
             var targetBlock = this.getBlockByPosition(targetLeft, targetTop);
-            if (targetBlock.type == 'floor' || targetBlock.type == 'target') {
+            if (targetBlock.type == ObjectTypes.floor || targetBlock.type == ObjectTypes.target ) {
                 this.player.setPosition(targetLeft, targetTop);
-            } else if (targetBlock.type == 'box') {
+            } else if (targetBlock.type ==  ObjectTypes.box) {
                 var oppositePosition = this.getOppositePosition(targetBlock);
                 var adjacentBlock = this.getBlockByPosition(oppositePosition.left, oppositePosition.top);
-                if (adjacentBlock.type == 'floor' || adjacentBlock.type == 'target') {
+                if (adjacentBlock.type ==ObjectTypes.floor || adjacentBlock.type == ObjectTypes.target) {
                     targetBlock.setPosition(oppositePosition.left, oppositePosition.top);
                     this.player.setPosition(targetLeft, targetTop);
-                    if (adjacentBlock.type == 'target') {
+                    if (adjacentBlock.type == ObjectTypes.target) {
                         if (!targetBlock.isOnTarget) {
                             targetBlock.setTarget(true);
                         }
@@ -57,7 +57,7 @@
             var block = null;
             for (blockIndex in this.allBlocks) {
                 if (this.allBlocks[blockIndex].left == left && this.allBlocks[blockIndex].top == top) {
-                    if (this.allBlocks[blockIndex].type != 'floor' && this.allBlocks[blockIndex].type != 'target') {
+                    if (this.allBlocks[blockIndex].type !=ObjectTypes.floor  && this.allBlocks[blockIndex].type != ObjectTypes.target) {
                         return this.allBlocks[blockIndex];
                     }else
                     {
