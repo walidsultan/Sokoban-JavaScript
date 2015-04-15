@@ -1,17 +1,8 @@
 ﻿(function (ns) {
-    ns.CollisionDetector = skui.extend(function () {
-        this.allBlocks = [];
-        this.player = null;
-        $(window).on('block.created', this.addBlockToArray.bind(this));
-        $(window).on('handleInput', this.handleMovement.bind(this))
+    ns.CollisionDetector = skui.extend(app.ui.StateManager, function () {
+        $(window).on('handleInput', this.handleMovement.bind(this));
+        this.init();
     }, {
-        addBlockToArray: function (e, data) {
-            if (data.type ==ObjectTypes.player) {
-                this.player = data;
-            } else {
-                this.allBlocks[this.allBlocks.length] = data;
-            }
-        },
         handleMovement: function (e, data) {
             var targetLeft = this.player.left;
             var targetTop = this.player.top;

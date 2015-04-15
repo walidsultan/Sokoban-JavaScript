@@ -25,8 +25,16 @@
             this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
             $('body').append(this.domElement);
 
-            if (this.type == 'box') {
-                $(window).trigger('box.' + this.guid + '.created');
+            switch (this.type) {
+                case ObjectTypes.box:
+                    $(window).trigger('box.' + this.guid + '.created');
+                    break;
+                case ObjectTypes.floor:
+                    $(window).trigger('floor.' + this.guid + '.created');
+                    break;
+                case ObjectTypes.target:
+                    $(window).trigger('target.' + this.guid + '.created');
+                    break;
             }
             $(window).trigger('block.created', [this]);
         },
