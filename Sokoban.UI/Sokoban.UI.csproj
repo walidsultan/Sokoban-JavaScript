@@ -64,7 +64,6 @@
     <Content Include="Images\BoxOnTarget.PNG" />
     <Content Include="Images\Floor.PNG" />
     <Content Include="Images\Ghost.png" />
-    <Content Include="Images\green box.png" />
     <Content Include="Images\interface.png" />
     <Content Include="Images\menu.png" />
     <Content Include="Images\messagebox.png" />

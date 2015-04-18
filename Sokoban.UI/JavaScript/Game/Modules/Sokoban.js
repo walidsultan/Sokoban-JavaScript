@@ -3,7 +3,7 @@
         this.initialize();
     }, {
         initialize: function () {
-            var level1 = '../Levels/MicroCosmos/level0.xml';
+            var level1 = '../Levels/MicroCosmos/level1.xml';
             var levelDoc = loadXMLDoc(level1);
             var levelRows = levelDoc.getElementsByTagName("L");
 

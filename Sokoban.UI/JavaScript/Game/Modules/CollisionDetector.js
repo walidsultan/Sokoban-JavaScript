@@ -46,8 +46,9 @@
         },
         animatePlayerPath: function (e, data) {
             for (directionIndex in data) {
-                this.handleMovement(e, { direction: data[directionIndex] });
+                $(window).trigger('addInputToQueue',{ direction: data[directionIndex] });
             }
+            $(window).trigger('checkInputQueue');
         }
     });
 })(skui.resolve('app.ui'));

@@ -1,7 +1,7 @@
 ﻿(function (ns) {
     ns.Block = skui.extend(function () {
     }, {
-        initBlock:function(){
+        initBlock: function () {
             this.blockSize = 60;
             //todo: refactor to position object
             this.left = -1;
@@ -45,7 +45,14 @@
         setPosition: function (left, top) {
             this.left = left;
             this.top = top;
-            this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
+            var me = this;
+            $(window).trigger('setAnimationStatus', true);
+            this.domElement.animate({ 'left': this.blockSize * left, 'top': this.blockSize * top }, 'fast', 'linear', function () {
+                if (me.type == ObjectTypes.player) {
+                    $(window).trigger('setAnimationStatus',false);
+                    $(window).trigger('checkInputQueue');
+                }
+            });
         }
     });
 })(skui.resolve('app.ui'));
