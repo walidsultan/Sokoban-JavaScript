@@ -1,6 +1,7 @@
 ﻿(function (ns) {
     ns.CollisionDetector = skui.extend(app.ui.StateManager, function () {
         $(window).on('handleInput', this.handleMovement.bind(this));
+        $(window).on('boxToTargetPathFound', this.animatePlayerPath.bind(this));
         this.init();
     }, {
         handleMovement: function (e, data) {
@@ -8,40 +9,44 @@
             var targetTop = this.player.top;
 
             switch (data.direction) {
-                case Directions.left:
+                case Direction.left:
                     targetLeft--;
                     break;
-                case Directions.top :
+                case Direction.top:
                     targetTop--;
                     break;
-                case Directions.right:
+                case Direction.right:
                     targetLeft++;
                     break;
-                case Directions.down:
+                case Direction.down:
                     targetTop++;
                     break;
             }
 
             var targetBlock = this.getBlockByPosition(targetLeft, targetTop);
-            if (targetBlock.type == ObjectTypes.floor || targetBlock.type == ObjectTypes.target ) {
+            if (targetBlock.type == ObjectTypes.floor || targetBlock.type == ObjectTypes.target) {
                 this.player.setPosition(targetLeft, targetTop);
-            } else if (targetBlock.type ==  ObjectTypes.box) {
-                var oppositePosition = this.getOppositePosition(targetBlock);
+            } else if (targetBlock.type == ObjectTypes.box) {
+                var oppositePosition = this.getOppositeBlockPosition(this.player, targetBlock);
                 var adjacentBlock = this.getBlockByPosition(oppositePosition.left, oppositePosition.top);
-                if (adjacentBlock.type ==ObjectTypes.floor || adjacentBlock.type == ObjectTypes.target) {
+                if (adjacentBlock.type == ObjectTypes.floor || adjacentBlock.type == ObjectTypes.target) {
                     targetBlock.setPosition(oppositePosition.left, oppositePosition.top);
                     this.player.setPosition(targetLeft, targetTop);
                     if (adjacentBlock.type == ObjectTypes.target) {
                         if (!targetBlock.isOnTarget) {
                             targetBlock.setTarget(true);
                         }
-                    } else
-                    {
+                    } else {
                         if (targetBlock.isOnTarget) {
                             targetBlock.setTarget(false);
                         }
                     }
                 }
+            }
+        },
+        animatePlayerPath: function (e, data) {
+            for (directionIndex in data) {
+                this.handleMovement(e, { direction: data[directionIndex] });
             }
         }
     });

@@ -8,6 +8,7 @@
             this.domElement.click(this.handleClick.bind(this));
         },
         handleClick: function () {
+            $(window).trigger('findPath', [this]);
         }
     });
 })(skui.resolve('app.ui'));

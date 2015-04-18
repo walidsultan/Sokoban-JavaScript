@@ -6,7 +6,7 @@
     wall: 'wall'
 }
 
-var Directions = {
+var Direction = {
     left: 'left',
     right: 'right',
     top: 'top',

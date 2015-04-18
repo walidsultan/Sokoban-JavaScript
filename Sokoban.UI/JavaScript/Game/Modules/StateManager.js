@@ -26,24 +26,9 @@
             }
             return block;
         },
-        getOppositePosition: function (targetBlock) {
-            var oppositeLeft = null;
-            var oppositeTop = null;
-            if (targetBlock.left == this.player.left) {
-                oppositeLeft = targetBlock.left;
-                if (targetBlock.top > this.player.top) {
-                    oppositeTop = targetBlock.top + 1;
-                } else {
-                    oppositeTop = targetBlock.top - 1;
-                }
-            } else if (targetBlock.top == this.player.top) {
-                oppositeTop = targetBlock.top;
-                if (targetBlock.left > this.player.left) {
-                    oppositeLeft = targetBlock.left + 1;
-                } else {
-                    oppositeLeft = targetBlock.left - 1;
-                }
-            }
+        getOppositeBlockPosition: function (referenceBlock, targetBlock) {
+            var oppositeLeft = 2 * targetBlock.left - referenceBlock.left;
+            var oppositeTop = 2 * targetBlock.top - referenceBlock.top;
 
             return { left: oppositeLeft, top: oppositeTop };
         },

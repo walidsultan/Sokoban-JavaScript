@@ -3,6 +3,7 @@
     }, {
         initBlock:function(){
             this.blockSize = 60;
+            //todo: refactor to position object
             this.left = -1;
             this.top = -1;
             this.domElement = null;
@@ -34,6 +35,9 @@
                     break;
                 case ObjectTypes.target:
                     $(window).trigger('target.' + this.guid + '.created');
+                    break;
+                case ObjectTypes.player:
+                    $(window).trigger('player.' + this.guid + '.created');
                     break;
             }
             $(window).trigger('block.created', [this]);
