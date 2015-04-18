@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    InitializeView('app.ui.DimensionsHandler');
     InitializeView('app.ui.StateManager');
     InitializeView('app.ui.PathFinder');
     InitializeView('app.ui.CollisionDetector');

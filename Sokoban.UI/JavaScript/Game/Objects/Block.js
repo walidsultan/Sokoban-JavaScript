@@ -24,7 +24,7 @@
             this.top = top;
             this.domElement = $('<div class="block ' + this.type + '"></div>');
             this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
-            $('body').append(this.domElement);
+            $('body .gameContainer').append(this.domElement);
 
             switch (this.type) {
                 case ObjectTypes.box:

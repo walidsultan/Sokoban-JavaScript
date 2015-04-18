@@ -7,6 +7,11 @@
             var levelDoc = loadXMLDoc(level1);
             var levelRows = levelDoc.getElementsByTagName("L");
 
+            var levelIdentifier= levelDoc.getElementsByTagName("Level");
+            var levelWidth = levelIdentifier[0].attributes[1].value;
+            var levelHeight = levelIdentifier[0].attributes[2].value;
+            $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
+
             for (i = 0; i < levelRows.length; i++) {
                 var row = levelRows[i].childNodes[0].nodeValue;
                 var isWallDrawn = false;
