@@ -41,12 +41,18 @@
                             targetBlock.setTarget(false);
                         }
                     }
+                } else {
+                    //Player blocked, so clear input queue
+                    $(window).trigger('clearInputQueue');
                 }
+            } else {
+                //Player blocked, so clear input queue
+                $(window).trigger('clearInputQueue');
             }
         },
         animatePlayerPath: function (e, data) {
             for (directionIndex in data) {
-                $(window).trigger('addInputToQueue',{ direction: data[directionIndex] });
+                $(window).trigger('addInputToQueue', { direction: data[directionIndex] });
             }
             $(window).trigger('checkInputQueue');
         }

@@ -19,15 +19,31 @@
             $('body').css({ 'background-size': windowSize });
 
             //Top and left margin adjustment
-            var zoomFactor = windowHeight / this.levelHeight;
-            var leftMargin = (windowWidth - windowSize * this.contentWidthRatio) / 2;
+            var leftMargin = 0;
             var topMargin = 0;
+            var zoomFactorWidth=windowSize * this.contentHeightRatio / this.levelHeight;
+            var zoomFactorHeight = windowSize * this.contentWidthRatio / this.levelWidth;
+            var zoomFactor = Math.min(zoomFactorWidth,zoomFactorHeight);
+            
             if (windowWidth >= windowHeight * this.backgroundRatio) {
-                topMargin = (windowHeight - windowSize * this.contentHeightRatio) / 2;
+                leftMargin = (windowWidth - this.levelWidth * zoomFactor) / 2
+                topMargin = (windowHeight - this.levelHeight * zoomFactor) / 2;
             } else {
-                topMargin = (windowWidth / this.backgroundRatio - windowSize * this.contentHeightRatio) / 2;
+                leftMargin = (windowWidth - this.levelWidth * zoomFactor) / 2;
+                topMargin = (windowWidth / this.backgroundRatio - this.levelHeight * zoomFactor) / 2;
             }
             $('body .gameContainer').css({ 'margin-left': leftMargin, 'margin-top': topMargin });
+
+            //Update all game blocks
+            $('body .gameContainer .block').each(function(){
+                $(this).css('left', zoomFactor * $(this).prop('data-left'))
+                                                .css('top', zoomFactor * $(this).prop('data-top'))
+                                                .css('background-size', zoomFactor)
+                                                .css('height', zoomFactor)
+                                               .css('width', zoomFactor);
+            });
+            skui.zoomFactor = zoomFactor;
+            $(window).trigger('drawLevel');
         },
         setLevelDimensions: function (e,data) {
             this.levelWidth = data.width;

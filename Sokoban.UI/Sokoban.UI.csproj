@@ -76,6 +76,7 @@
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
+    <Content Include="JavaScript\Game\Modules\DimensionsHandler.js" />
     <Content Include="JavaScript\Game\Modules\StateManager.js" />
     <Content Include="JavaScript\Game\Modules\PathFinder.js" />
     <Content Include="JavaScript\Game\Utility\Enums.js" />
@@ -87,7 +88,7 @@
     <Content Include="JavaScript\Game\Modules\KeyboardHandler.js" />
     <Content Include="JavaScript\Game\Main.js" />
     <Content Include="JavaScript\Game\Objects\Player.js" />
-    <Content Include="JavaScript\Game\Modules\Sokoban.js" />
+    <Content Include="JavaScript\Game\Modules\LevelLoader.js" />
     <Content Include="JavaScript\Game\Objects\Target.js" />
     <Content Include="JavaScript\Game\Objects\Wall.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />

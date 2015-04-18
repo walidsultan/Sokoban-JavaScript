@@ -2,7 +2,6 @@
     ns.Block = skui.extend(function () {
     }, {
         initBlock: function () {
-            this.blockSize = 60;
             //todo: refactor to position object
             this.left = -1;
             this.top = -1;
@@ -23,7 +22,13 @@
             this.left = left;
             this.top = top;
             this.domElement = $('<div class="block ' + this.type + '"></div>');
-            this.domElement.css('left', this.blockSize * left).css('top', this.blockSize * top);
+            this.domElement.css('left', skui.zoomFactor * left)
+                                               .css('top', skui.zoomFactor * top)
+                                               .css('background-size', skui.zoomFactor)
+                                               .css('height', skui.zoomFactor)
+                                               .css('width', skui.zoomFactor)
+                                               .prop('data-left', left)
+                                               .prop('data-top', top);
             $('body .gameContainer').append(this.domElement);
 
             switch (this.type) {
@@ -47,9 +52,10 @@
             this.top = top;
             var me = this;
             $(window).trigger('setAnimationStatus', true);
-            this.domElement.animate({ 'left': this.blockSize * left, 'top': this.blockSize * top }, 'fast', 'linear', function () {
+            this.domElement.prop({ 'data-left': left, 'data-top': top });
+            this.domElement.animate({ 'left': skui.zoomFactor * left, 'top': skui.zoomFactor * top }, 'fast', 'linear', function () {
                 if (me.type == ObjectTypes.player) {
-                    $(window).trigger('setAnimationStatus',false);
+                    $(window).trigger('setAnimationStatus', false);
                     $(window).trigger('checkInputQueue');
                 }
             });
