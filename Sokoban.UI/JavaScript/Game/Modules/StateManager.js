@@ -1,5 +1,6 @@
 ﻿(function (ns) {
     ns.StateManager = skui.extend(function () {
+       
     }, {
         init: function () {
             this.allBlocks = [];

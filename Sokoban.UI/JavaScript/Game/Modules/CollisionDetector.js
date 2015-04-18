@@ -3,6 +3,7 @@
         $(window).on('handleInput', this.handleMovement.bind(this));
         $(window).on('boxToTargetPathFound', this.animatePlayerPath.bind(this));
         this.init();
+        $(window).on('reloadLevel', this.clearBlocks.bind(this));
     }, {
         handleMovement: function (e, data) {
             var targetLeft = this.player.left;
@@ -36,6 +37,7 @@
                         if (!targetBlock.isOnTarget) {
                             targetBlock.setTarget(true);
                         }
+                        this.isLevelSolved();
                     } else {
                         if (targetBlock.isOnTarget) {
                             targetBlock.setTarget(false);
@@ -55,6 +57,17 @@
                 $(window).trigger('addInputToQueue', { direction: data[directionIndex] });
             }
             $(window).trigger('checkInputQueue');
+        },
+        isLevelSolved: function () {
+            var boxes = this.allBlocks.filter(function (block) { return block.type == ObjectTypes.box && !block.isOnTarget; });
+            if (boxes.length == 0) {
+                $(window).trigger('levelSolved');
+            }
+        },
+        clearBlocks: function () {
+            this.allBlocks.length = 0;
+            this.player = null;
+            $(window).trigger('initLevel');
         }
     });
 })(skui.resolve('app.ui'));

@@ -53,7 +53,7 @@
             var me = this;
             $(window).trigger('setAnimationStatus', true);
             this.domElement.prop({ 'data-left': left, 'data-top': top });
-            this.domElement.animate({ 'left': skui.zoomFactor * left, 'top': skui.zoomFactor * top }, 'fast', 'linear', function () {
+            this.domElement.animate({ 'left': skui.zoomFactor * left, 'top': skui.zoomFactor * top }, 100, 'linear', function () {
                 if (me.type == ObjectTypes.player) {
                     $(window).trigger('setAnimationStatus', false);
                     $(window).trigger('checkInputQueue');

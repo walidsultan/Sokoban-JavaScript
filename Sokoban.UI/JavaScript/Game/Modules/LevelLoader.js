@@ -1,14 +1,16 @@
 ﻿(function (ns) {
     ns.LevelLoader = skui.extend(function () {
         this.levelIndex = 1;
-        this.levelRendered = false;
-        $(window).on('drawLevel',this.drawLevel.bind(this));
+        $(window).on('drawLevel', this.drawLevel.bind(this));
+        $(window).on('initLevel', this.loadLevel.bind(this));
+        $(window).on('loadNextLevel', this.loadNextLevel.bind(this))
         this.init();
     }, {
         init: function () {
             var levelPath = '../Levels/MicroCosmos/level' + this.levelIndex + '.xml';
             var levelDoc = loadXMLDoc(levelPath);
             this.levelRows = levelDoc.getElementsByTagName("L");
+            this.levelRendered = false;
 
             var levelIdentifier = levelDoc.getElementsByTagName("Level");
             var levelWidth = levelIdentifier[0].attributes[1].value;
@@ -64,6 +66,14 @@
                     }
                 }
             }
+        },
+        loadLevel: function () {
+            $('body .gameContainer').html('');
+            this.init();
+        },
+        loadNextLevel: function () {
+            this.levelIndex++;
+            $(window).trigger('reloadLevel');
         }
     });
 })(skui.resolve('app.ui'));

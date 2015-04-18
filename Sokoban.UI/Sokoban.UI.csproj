@@ -91,6 +91,7 @@
     <Content Include="JavaScript\Game\Modules\LevelLoader.js" />
     <Content Include="JavaScript\Game\Objects\Target.js" />
     <Content Include="JavaScript\Game\Objects\Wall.js" />
+    <Content Include="JavaScript\Libraries\jquery-ui.min.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />
     <Content Include="Levels\MicroCosmos\level0.xml" />
     <Content Include="Levels\MicroCosmos\level1.xml" />
@@ -152,6 +153,22 @@
     <Content Include="Levels\SokoHard\sokohard7.xml" />
     <Content Include="Levels\SokoHard\sokohard8.xml" />
     <Content Include="Pages\Game.html" />
+    <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jquery-ui.min.css" />
+    <Content Include="Styles\jquery-ui.structure.min.css" />
+    <Content Include="Styles\jquery-ui.theme.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

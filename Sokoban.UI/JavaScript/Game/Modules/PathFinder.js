@@ -1,6 +1,7 @@
 ﻿(function (ns) {
     ns.PathFinder = skui.extend(app.ui.StateManager, function () {
         $(window).on('findPath', this.findPath.bind(this));
+        $(window).on('reloadLevel', this.clearBlocks.bind(this));
         this.init();
     }, {
         findPath: function (e, targetBlock) {
@@ -184,6 +185,10 @@
                 }
             }
             return pathDirection;
+        },
+        clearBlocks: function () {
+            this.allBlocks.length = 0;
+            this.player = null;
         }
     });
 })(skui.resolve('app.ui'));

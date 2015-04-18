@@ -6,7 +6,9 @@
         $(window).on('checkInputQueue', this.checkInputQueue.bind(this));
         $(window).on('setAnimationStatus', this.setAnimationStatus.bind(this));
         $(window).on('clearInputQueue', this.clearInputQueue.bind(this));
+        $(window).on('levelSolved', this.getLevelStatus.bind(this));
         this.isAnimating = false;
+        this.inputHistory=[];
     }, {
         handleKeyDownEvent: function (e) {
             e.preventDefault();
@@ -24,10 +26,16 @@
                 case 40: //down
                     direction = Direction.down;
                     break;
+                case 8://Undo
+                    break;
+                case 82://Reload
+                    $(window).trigger('reloadLevel');
+                    break;
             }
             if (this.isAnimating) {
                 this.addInputToQueue(e, { direction: direction });
             } else {
+                this.inputHistory[this.inputHistory.length] = direction;
                 $(window).trigger('handleInput', { direction: direction });
             }
         },
@@ -36,6 +44,7 @@
         },
         checkInputQueue: function () {
             if (this.inputQueue.length > 0) {
+                this.inputHistory[this.inputHistory.length] = this.inputQueue[0].direction;
                 $(window).trigger('handleInput', this.inputQueue[0]);
                 this.inputQueue.splice(0, 1);
             }
@@ -45,6 +54,11 @@
         },
         clearInputQueue: function (e) {
             this.inputQueue.length = 0;
+            this.inputHistory.length = 0;
+            this.isAnimating = false;
+        },
+        getLevelStatus: function () {
+            $(window).trigger('dialog.setLevelStatus', { movesCount: this.inputHistory .length});
         }
     });
 })(skui.resolve('app.ui'));

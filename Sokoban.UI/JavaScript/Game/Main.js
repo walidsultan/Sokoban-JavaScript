@@ -5,4 +5,5 @@
     InitializeView('app.ui.CollisionDetector');
     InitializeView('app.ui.LevelLoader');
     InitializeView('app.ui.KeyboardHandler');
+    InitializeView('app.ui.ModalsHandler');
 });
