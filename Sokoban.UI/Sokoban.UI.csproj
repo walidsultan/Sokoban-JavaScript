@@ -76,6 +76,8 @@
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
+    <Content Include="JavaScript\Game\Modules\UsersHandler.js" />
+    <Content Include="JavaScript\Game\Modules\ModalsHandler.js" />
     <Content Include="JavaScript\Game\Modules\DimensionsHandler.js" />
     <Content Include="JavaScript\Game\Modules\StateManager.js" />
     <Content Include="JavaScript\Game\Modules\PathFinder.js" />
