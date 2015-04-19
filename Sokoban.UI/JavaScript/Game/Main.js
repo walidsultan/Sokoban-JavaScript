@@ -6,4 +6,5 @@
     InitializeView('app.ui.LevelLoader');
     InitializeView('app.ui.KeyboardHandler');
     InitializeView('app.ui.ModalsHandler');
+    InitializeView('app.ui.UsersHandler');
 });

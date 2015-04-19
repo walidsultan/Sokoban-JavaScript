@@ -1,10 +1,9 @@
 ﻿(function (ns) {
     ns.LevelLoader = skui.extend(function () {
-        this.levelIndex = 1;
         $(window).on('drawLevel', this.drawLevel.bind(this));
         $(window).on('initLevel', this.loadLevel.bind(this));
         $(window).on('loadNextLevel', this.loadNextLevel.bind(this))
-        this.init();
+        $(window).on('setLevelIndex', this.setLevelIndex.bind(this))
     }, {
         init: function () {
             var levelPath = '../Levels/MicroCosmos/level' + this.levelIndex + '.xml';
@@ -13,8 +12,8 @@
             this.levelRendered = false;
 
             var levelIdentifier = levelDoc.getElementsByTagName("Level");
-            var levelWidth = levelIdentifier[0].attributes[1].value;
-            var levelHeight = levelIdentifier[0].attributes[2].value;
+            var levelWidth = levelIdentifier[0].getAttribute('Width');
+            var levelHeight = levelIdentifier[0].getAttribute('Height');
             $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
         },
         drawLevel: function (e) {
@@ -74,6 +73,10 @@
         loadNextLevel: function () {
             this.levelIndex++;
             $(window).trigger('reloadLevel');
+        },
+        setLevelIndex: function (e,data) {
+            this.levelIndex = data;
+            this.init();
         }
     });
 })(skui.resolve('app.ui'));
