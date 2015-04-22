@@ -7,7 +7,7 @@
         findPath: function (e, targetBlock) {
             var selectedBox = this.getSelectedBox();
             if (selectedBox != null) {
-                if (targetBlock.type == ObjectTypes.player) {
+                if (targetBlock.type == ObjectType.player) {
                     targetBlock = this.getBlockByPosition(targetBlock.left, targetBlock.top);
                 }
                 var solution = null;
@@ -70,13 +70,13 @@
             var lstAdjacentBlocks = this.getAdjacentBlocksWithRelativeDirections(selectedBox);
             for (blockIndex in lstAdjacentBlocks) {
                 var blockPath = lstAdjacentBlocks[blockIndex];
-                if (blockPath.block.type == ObjectTypes.floor || blockPath.block.type == ObjectTypes.target) {
+                if (blockPath.block.type == ObjectType.floor || blockPath.block.type == ObjectType.target) {
                     var path = this.getDirectPath(this.player, blockPath.block);
                     if (path != null) {
                         var oppositePosition = this.getOppositeBlockPosition(blockPath.block, selectedBox);
 
                         var block = this.getBlockByPosition(oppositePosition.left, oppositePosition.top);
-                        if (block.type == ObjectTypes.floor || block.type == ObjectTypes.target) {
+                        if (block.type == ObjectType.floor || block.type == ObjectType.target) {
                             var solution = {
                                 boxPosition: oppositePosition,
                                 playerPath: path,
@@ -123,7 +123,7 @@
             while (lstRecursiveBlocks.length > 0) {
                 //Remove walls and boxes
                 lstRecursiveBlocks = lstRecursiveBlocks.filter(function (blockPath) {
-                    return blockPath.block.type != ObjectTypes.wall && blockPath.block.type != ObjectTypes.box;
+                    return blockPath.block.type != ObjectType.wall && blockPath.block.type != ObjectType.box;
                 });
 
                 //Remove any blocks that have been checked already

@@ -1,4 +1,4 @@
-﻿var ObjectTypes = {
+﻿var ObjectType = {
     floor: 'floor',
     box: 'box',
     player: 'player',

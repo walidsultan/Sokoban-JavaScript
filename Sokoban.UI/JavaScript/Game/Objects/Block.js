@@ -32,29 +32,32 @@
             $('body .gameContainer').append(this.domElement);
 
             switch (this.type) {
-                case ObjectTypes.box:
+                case ObjectType.box:
                     $(window).trigger('box.' + this.guid + '.created');
                     break;
-                case ObjectTypes.floor:
+                case ObjectType.floor:
                     $(window).trigger('floor.' + this.guid + '.created');
                     break;
-                case ObjectTypes.target:
+                case ObjectType.target:
                     $(window).trigger('target.' + this.guid + '.created');
                     break;
-                case ObjectTypes.player:
+                case ObjectType.player:
                     $(window).trigger('player.' + this.guid + '.created');
                     break;
             }
             $(window).trigger('block.created', [this]);
         },
-        setPosition: function (left, top) {
+        setPosition: function (left, top, skipHistory) {
+            if (!skipHistory) {
+                $(window).trigger('addMovementIncident', { block: this, left: this.left, top: this.top, isOnTarget: this.isOnTarget });
+            }
             this.left = left;
             this.top = top;
             var me = this;
             $(window).trigger('setAnimationStatus', true);
             this.domElement.prop({ 'data-left': left, 'data-top': top });
             this.domElement.animate({ 'left': skui.zoomFactor * left, 'top': skui.zoomFactor * top }, 100, 'linear', function () {
-                if (me.type == ObjectTypes.player) {
+                if (me.type == ObjectType.player) {
                     $(window).trigger('setAnimationStatus', false);
                     $(window).trigger('checkInputQueue');
                 }

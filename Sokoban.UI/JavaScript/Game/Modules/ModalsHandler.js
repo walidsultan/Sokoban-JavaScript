@@ -1,22 +1,16 @@
 ﻿(function (ns) {
     ns.ModalsHandler = skui.extend(function () {
-        $(window).on('dialog.setLevelStatus', this.setLevelStatus.bind(this));
+        $(window).on('levelSolved', this.showLevelSolvedDialog.bind(this));
     }, {
-        showLevelSolvedDialog: function () {
+        showLevelSolvedDialog: function (e,data) {
             $('.dialog').prop('title', 'Level Solved');
-            $('.dialog').html('Congratulations! Level Solved in '+this.movesCount +' moves and '+this.pushesCount +' pushes');
+            $('.dialog').html('Congratulations! Level Solved in ' + data.movesCount + ' moves and ' + data.pushesCount + ' pushes');
             $('.dialog').dialog({
                 minWidth: 420,
                 close: function () {
                     $(window).trigger('loadNextLevel');
                 }
             });
-        },
-        setLevelStatus: function (e,data) {
-            this.movesCount = data.movesCount;
-            this.pushesCount = data.pushesCount;
-
-            this.showLevelSolvedDialog();
         }
     });
 })(skui.resolve('app.ui'));
