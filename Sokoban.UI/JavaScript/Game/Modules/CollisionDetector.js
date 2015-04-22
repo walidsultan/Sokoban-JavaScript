@@ -43,6 +43,7 @@
                             targetBlock.setTarget(false);
                         }
                     }
+                    $(window).trigger('incrementPushes');
                 } else {
                     //Player blocked, so clear input queue
                     $(window).trigger('clearInputQueue');

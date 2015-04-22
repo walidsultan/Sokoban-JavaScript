@@ -7,8 +7,11 @@
         $(window).on('setAnimationStatus', this.setAnimationStatus.bind(this));
         $(window).on('clearInputQueue', this.clearInputQueue.bind(this));
         $(window).on('levelSolved', this.getLevelStatus.bind(this));
+        $(window).on('incrementPushes', this.incrementPushes.bind(this));
+        $(window).on('reloadLevel', this.clearhistory.bind(this));
         this.isAnimating = false;
         this.inputHistory=[];
+        this.pushesCount = 0;
     }, {
         handleKeyDownEvent: function (e) {
             e.preventDefault();
@@ -54,11 +57,17 @@
         },
         clearInputQueue: function (e) {
             this.inputQueue.length = 0;
-            this.inputHistory.length = 0;
             this.isAnimating = false;
         },
         getLevelStatus: function () {
-            $(window).trigger('dialog.setLevelStatus', { movesCount: this.inputHistory .length});
+            $(window).trigger('dialog.setLevelStatus', { movesCount: this.inputHistory.length, pushesCount: this.pushesCount });
+        },
+        incrementPushes: function () {
+            this.pushesCount++;
+        },
+        clearhistory: function () {
+            this.pushesCount = 0;
+            this.inputHistory.length = 0;
         }
     });
 })(skui.resolve('app.ui'));
