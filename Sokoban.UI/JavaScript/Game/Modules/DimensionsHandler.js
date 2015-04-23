@@ -3,7 +3,7 @@
         $(window).resize(this.setBlocksDimensions.bind(this));
         this.SFFWidth = 900;
         this.SFFHeight = 600;
-        $(window).on('setLevelDimensions', this.setLevelDimensions.bind(this))
+        $(window).on('setLevelDimensions', this.setLevelDimensions.bind(this));
     }, {
         setBlocksDimensions: function () {
             //Background adjustment
