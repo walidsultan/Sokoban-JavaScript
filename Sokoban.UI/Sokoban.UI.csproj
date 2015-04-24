@@ -73,6 +73,7 @@
     <Content Include="Images\sokoban 16.png" />
     <Content Include="Images\sokoban 32.png" />
     <Content Include="Images\sokoban 42.png" />
+    <Content Include="Images\Sprite.png" />
     <Content Include="Images\target.png" />
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
@@ -82,6 +83,7 @@
     <Content Include="JavaScript\Game\Modules\DimensionsHandler.js" />
     <Content Include="JavaScript\Game\Modules\StateManager.js" />
     <Content Include="JavaScript\Game\Modules\PathFinder.js" />
+    <Content Include="JavaScript\Game\Utility\ImagesPreloader.js" />
     <Content Include="JavaScript\Game\Utility\Enums.js" />
     <Content Include="JavaScript\Game\Objects\Block.js" />
     <Content Include="JavaScript\Game\Objects\Box.js" />
