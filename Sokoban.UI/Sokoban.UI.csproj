@@ -155,6 +155,7 @@
     <Content Include="Levels\SokoHard\sokohard6.xml" />
     <Content Include="Levels\SokoHard\sokohard7.xml" />
     <Content Include="Levels\SokoHard\sokohard8.xml" />
+    <Content Include="Index.html" />
     <Content Include="Pages\Game.html" />
     <Content Include="Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
