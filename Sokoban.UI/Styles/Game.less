@@ -4,6 +4,13 @@
     background-position:top center;
     background-size:1280px;
     margin:0;
+
+     /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout: none;            
+    /* prevent webkit from resizing text to fit */
+    -webkit-text-size-adjust: none;             
+    /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-user-select: none; 
 }
 
 .block{

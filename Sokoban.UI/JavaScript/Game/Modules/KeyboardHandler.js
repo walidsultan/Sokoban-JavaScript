@@ -32,6 +32,12 @@
                 case 82://Reload
                     $(window).trigger('reloadLevel');
                     break;
+                case 107:
+                    $(window).trigger('loadNextLevel');
+                    break;
+                case 109:
+                    $(window).trigger('loadPreviousLevel');
+                    break;
             }
             if (direction != null) {
                 if (this.isAnimating) {

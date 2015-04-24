@@ -56,8 +56,8 @@
             $(window).trigger('drawLevel');
         },
         setLevelDimensions: function (e,data) {
-            this.levelWidth = data.width;
-            this.levelHeight= data.height;
+            this.levelWidth = parseInt(data.width);
+            this.levelHeight = parseInt(data.height);
             this.setBlocksDimensions();
         }
     });

@@ -4,6 +4,7 @@
         $(window).on('initLevel', this.loadLevel.bind(this));
         $(window).on('loadNextLevel', this.loadNextLevel.bind(this))
         $(window).on('setLevelIndex', this.setLevelIndex.bind(this))
+        $(window).on('loadPreviousLevel', this.loadPreviousLevel.bind(this));
     }, {
         init: function () {
             var levelPath = '../Levels/MicroCosmos/level' + this.levelIndex + '.xml';
@@ -77,6 +78,10 @@
         setLevelIndex: function (e,data) {
             this.levelIndex = data;
             this.init();
+        },
+        loadPreviousLevel: function () {
+            this.levelIndex--;
+            $(window).trigger('reloadLevel');
         }
     });
 })(skui.resolve('app.ui'));
