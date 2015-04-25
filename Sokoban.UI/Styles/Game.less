@@ -1,10 +1,20 @@
 ﻿body {
+
+    &.sokoban{
     background-image: url( '../Images/interface.png');
     background-repeat:no-repeat;
     background-position:top center;
     background-size:1280px;
     margin:0;
+    }
+    &.menu
+     {
+         background-image: url( '../Images/menu.png');
+         background-repeat:no-repeat;
+        background-position:top center;
+        background-size:1280px;
 
+    }
      /* prevent callout to copy image, etc when tap to hold */
     -webkit-touch-callout: none;            
     /* prevent webkit from resizing text to fit */
@@ -48,9 +58,39 @@
 .gameContainer{
     position:relative;
 }
+.gameStatus{
+        position:absolute;
+        div{
+            display:inline-block;
+        }
+    }
+
+.menuContainer{
+    text-align:center;
+    color:#fff;
+    div{
+        cursor:pointer;
+        margin-bottom:20px;
+        &.disabled{
+            color:#aaa;
+            cursor:default;
+        }
+    }
+}
 
 @media screen and (max-width: 900px) , screen and (max-height: 680px) {
     body{
-        background:none;
+        &.sokoban{
+            background:none;
+        }
+         &.menu
+        {
+            background-color:#006bb0; 
+        }
+    }
+
+    .gameStatus
+    {
+        display:none;
     }
 }

@@ -10,7 +10,8 @@
             var windowWidth = $(window).width();
             var windowHeight = $(window).height();
             var windowSize = 0;
-            var isSFF=windowWidth <= this.SFFWidth || windowHeight <= this.SFFHeight;
+            var isSFF = windowWidth <= this.SFFWidth || windowHeight <= this.SFFHeight;
+            $(window).trigger('setFF', isSFF);
             if (isSFF) {
                 this.contentHeightRatio = .95;
                 this.contentWidthRatio = .9;
@@ -24,14 +25,14 @@
             if (windowWidth >= windowHeight * this.backgroundRatio) {
                 windowSize = windowHeight * this.backgroundRatio;
             } else {
-                windowSize = windowWidth ;  
+                windowSize = windowWidth;
             }
             $('body').css({ 'background-size': windowSize });
 
             //Top and left margin adjustment
             var leftMargin = 0;
             var topMargin = 0;
-            var zoomFactorWidth=windowSize *this.contentHeightRatio / this.levelHeight;
+            var zoomFactorWidth = windowSize * this.contentHeightRatio / this.levelHeight;
             var zoomFactorHeight = windowSize * this.contentWidthRatio / this.levelWidth;
 
             var zoomFactorMax = Math.max(zoomFactorWidth, zoomFactorHeight);
@@ -57,7 +58,7 @@
             $('body .gameContainer').css({ 'margin-left': leftMargin, 'margin-top': topMargin });
 
             //Update all game blocks
-            $('body .gameContainer .block').each(function(){
+            $('body .gameContainer .block').each(function () {
                 $(this).css('left', zoomFactor * $(this).prop('data-left'))
                                                 .css('top', zoomFactor * $(this).prop('data-top'))
                                                 .css('background-size', zoomFactor)
@@ -65,9 +66,27 @@
                                                .css('width', zoomFactor);
             });
             skui.zoomFactor = zoomFactor;
+
+            //Set game status position
+            if (!isSFF) {
+                var gameStatusTopPosition = 0;
+                var gameStatusLeftPosition = 0;
+                var gameStatusPositionFactor = .92;
+                var gameStatusLeftMarginFactor = 3;
+                var gameStatusRightMarginFactor = 10;
+                if (windowWidth >= windowHeight * this.backgroundRatio) {
+                    gameStatusTopPosition = windowHeight * gameStatusPositionFactor;
+                } else {
+                    gameStatusTopPosition = windowWidth * gameStatusPositionFactor / this.backgroundRatio;
+                }
+                gameStatusLeftPosition = (windowWidth - windowSize + windowSize/gameStatusLeftMarginFactor) / 2;
+                $('body .gameStatusContainer .gameStatus').css('top', gameStatusTopPosition).css('left', gameStatusLeftPosition);
+                $('body .gameStatusContainer .gameStatus div').css('marginRight', windowSize / gameStatusRightMarginFactor);
+            }
+
             $(window).trigger('drawLevel');
         },
-        setLevelDimensions: function (e,data) {
+        setLevelDimensions: function (e, data) {
             this.levelWidth = parseInt(data.width);
             this.levelHeight = parseInt(data.height);
             this.setBlocksDimensions();

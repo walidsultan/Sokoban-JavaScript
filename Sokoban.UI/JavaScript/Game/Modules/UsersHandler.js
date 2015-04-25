@@ -8,13 +8,13 @@
         } else {
             var sokobanUser = {
                 userId: guid(),
-                levelIndex:1
+                levelIndex: 1
             };
-            this.setCookie('sokobanUser', JSON.stringify(sokobanUser),365);
+            this.setCookie('sokobanUser', JSON.stringify(sokobanUser), 365);
         }
         $(window).on('levelSolved', this.saveUserLevelIndex.bind(this));
 
-        $(window).trigger('setLevelIndex', [this.levelIndex]);
+        $(window).trigger('loadMenu', { levelIndex: this.levelIndex });
     }, {
         setCookie: function (cname, cvalue, exdays) {
             var d = new Date();

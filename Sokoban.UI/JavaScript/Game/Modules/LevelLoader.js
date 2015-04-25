@@ -7,6 +7,8 @@
         $(window).on('loadPreviousLevel', this.loadPreviousLevel.bind(this));
     }, {
         init: function () {
+            $('body').prop('class', 'sokoban');
+
             var levelPath = '../Levels/MicroCosmos/level' + this.levelIndex + '.xml';
             var levelDoc = loadXMLDoc(levelPath);
             this.levelRows = levelDoc.getElementsByTagName("L");
@@ -15,10 +17,12 @@
             var levelIdentifier = levelDoc.getElementsByTagName("Level");
             var levelWidth = levelIdentifier[0].getAttribute('Width');
             var levelHeight = levelIdentifier[0].getAttribute('Height');
+            var levelId = levelIdentifier[0].getAttribute('Id');
+            $(window).trigger('updateLevelName', levelId);
             $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
         },
         drawLevel: function (e) {
-            if (!this.levelRendered) {
+            if (!this.levelRendered && this.levelRows!=null) {
                 this.levelRendered = true;
                 for (i = 0; i < this.levelRows.length; i++) {
                     var row = this.levelRows[i].childNodes[0].nodeValue;
