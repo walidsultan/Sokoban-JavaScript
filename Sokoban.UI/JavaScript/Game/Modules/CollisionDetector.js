@@ -83,12 +83,16 @@
         undoLastMovement: function () {
             if (this.historyStack.length > 0) {
                 var lastIncident = this.historyStack.pop();
-                lastIncident.block.setPosition(lastIncident.left, lastIncident.top,true);
+                lastIncident.block.setPosition(lastIncident.left, lastIncident.top, true);
                 if (lastIncident.block.type == ObjectType.box) {
                     lastIncident.block.setTarget(lastIncident.isOnTarget);
+                    $(window).trigger('pushesDecremented');
 
-                     lastIncident = this.historyStack.pop();
-                     lastIncident.block.setPosition(lastIncident.left, lastIncident.top, true);
+                    lastIncident = this.historyStack.pop();
+                    lastIncident.block.setPosition(lastIncident.left, lastIncident.top, true);
+                    $(window).trigger('movesDecremented');
+                } else {
+                    $(window).trigger('movesDecremented');
                 }
             }
         }

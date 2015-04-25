@@ -4,8 +4,15 @@
         $(window).on('setGameIndex', this.setGameIndex.bind(this));
         $(window).on('setFF', this.setFF.bind(this));
         $(window).on('levelSolved', this.onLevelSolved.bind(this));
+        $(window).on('addMovementIncident', this.updateMovementStatus.bind(this));
+        $(window).on('loadNextLevel', this.resetGameCounters.bind(this))
+        $(window).on('reloadLevel', this.resetGameCounters.bind(this))
+        $(window).on('movesDecremented', this.decrementMovesCount.bind(this));
+        $(window).on('pushesDecremented', this.decrementPushesCount.bind(this));
 
-        this.gameTime = 1;
+        this.gameTime = 0;
+        this.movesCount = 0;
+        this.pushesCount = 0;
 
         this.loadGame();
     }, {
@@ -25,13 +32,14 @@
 
             $(window).trigger('setLevelIndex', this.levelIndex);
         },
-        setGameIndex: function (e,levelIndex) {
+        setGameIndex: function (e, levelIndex) {
             this.levelIndex = levelIndex;
         },
         setFF: function (e, isSFF) {
             this.isSFF = isSFF;
-            if (!this.isSFF && this.intervalId==null) {
-              this.intervalId=  setInterval(this.setTimer.bind(this), 1000);
+
+            if (this.intervalId == null) {
+                this.intervalId = setInterval(this.setTimer.bind(this), 1000);
             }
         },
         setTimer: function () {
@@ -40,8 +48,33 @@
             this.gameTime++;
         },
         onLevelSolved: function () {
-            this.gameTime = 1;
             clearInterval(this.intervalId);
+            this.intervalId = null;
+        },
+        updateMovementStatus: function (e, data) {
+            if (data.block.type == ObjectType.box) {
+                this.pushesCount++;
+                $('body .gameStatusContainer .pushesCount').text(this.pushesCount);
+            } else {
+                this.movesCount++;
+                $('body .gameStatusContainer .movesCount').text(this.movesCount);
+            }
+        },
+        resetGameCounters: function () {
+            this.gameTime = 0;
+            this.pushesCount = 0;
+            this.movesCount = 0;
+            $('body .gameStatusContainer .time').text(this.gameTime);
+            $('body .gameStatusContainer .pushesCount').text(this.pushesCount);
+            $('body .gameStatusContainer .movesCount').text(this.movesCount);
+        },
+        decrementMovesCount: function () {
+            this.movesCount--;
+            $('body .gameStatusContainer .movesCount').text(this.movesCount);
+        },
+        decrementPushesCount: function () {
+            this.pushesCount--;
+            $('body .gameStatusContainer .pushesCount').text(this.pushesCount);
         }
     });
 })(skui.resolve('app.ui'));
