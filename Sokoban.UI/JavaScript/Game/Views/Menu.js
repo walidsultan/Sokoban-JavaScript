@@ -40,9 +40,11 @@
                 $(window).trigger('setGameIndex', [1]);
             });
             $('body .menuContainer .continue').click(function () {
-                InitializeView('app.ui.Game');
-                me.unloadMenu();
-                $(window).trigger('setGameIndex', [me.levelIndex]);
+                if (!$(this).hasClass('disabled')) {
+                    InitializeView('app.ui.Game');
+                    me.unloadMenu();
+                    $(window).trigger('setGameIndex', [me.levelIndex]);
+                }
             });
         },
         unloadMenu: function () {
