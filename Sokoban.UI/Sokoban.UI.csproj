@@ -60,6 +60,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\backArrow.png" />
     <Content Include="Images\Box.PNG" />
     <Content Include="Images\BoxOnTarget.PNG" />
     <Content Include="Images\Floor.PNG" />
@@ -69,6 +70,7 @@
     <Content Include="Images\menu.png" />
     <Content Include="Images\messagebox.png" />
     <Content Include="Images\player.png" />
+    <Content Include="Images\reload.png" />
     <Content Include="Images\sokoban 128.png" />
     <Content Include="Images\sokoban 16.png" />
     <Content Include="Images\sokoban 32.png" />
