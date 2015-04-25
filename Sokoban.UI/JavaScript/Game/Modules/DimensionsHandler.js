@@ -67,8 +67,8 @@
             });
             skui.zoomFactor = zoomFactor;
 
-            //Set game status position
             if (!isSFF) {
+                //Set game status position
                 var gameStatusTopPosition = 0;
                 var gameStatusLeftPosition = 0;
                 var gameStatusPositionFactor = .92;
@@ -79,9 +79,15 @@
                 } else {
                     gameStatusTopPosition = windowWidth * gameStatusPositionFactor / this.backgroundRatio;
                 }
-                gameStatusLeftPosition = (windowWidth - windowSize + windowSize/gameStatusLeftMarginFactor) / 2;
+                gameStatusLeftPosition = (windowWidth - windowSize + windowSize / gameStatusLeftMarginFactor) / 2;
                 $('body .gameStatusContainer .gameStatus').css('top', gameStatusTopPosition).css('left', gameStatusLeftPosition);
                 $('body .gameStatusContainer .gameStatus div').css('marginRight', windowSize / gameStatusRightMarginFactor);
+            } else {
+                //Adjust sff navigator position
+                var sffNavigatorIconSize = zoomFactor;
+                $('body .sffNavigator div').css('width', sffNavigatorIconSize)
+                                                                     .css('height', sffNavigatorIconSize)
+                                                                     .css('backgroundSize', sffNavigatorIconSize);
             }
 
             $(window).trigger('drawLevel');

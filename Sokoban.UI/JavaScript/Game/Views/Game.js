@@ -31,6 +31,8 @@
             InitializeView('app.ui.LevelLoader');
 
             $(window).trigger('setLevelIndex', this.levelIndex);
+            $('.sffNavigator .back').click(this.undoLastMovement.bind(this));
+            $('.sffNavigator .reload').click(this.reloadLevel.bind(this));
         },
         setGameIndex: function (e, levelIndex) {
             this.levelIndex = levelIndex;
@@ -75,6 +77,12 @@
         decrementPushesCount: function () {
             this.pushesCount--;
             $('body .gameStatusContainer .pushesCount').text(this.pushesCount);
+        },
+        undoLastMovement: function () {
+            $(window).trigger('undoLastMovement');
+        },
+        reloadLevel: function () {
+            $(window).trigger('reloadLevel');
         }
     });
 })(skui.resolve('app.ui'));

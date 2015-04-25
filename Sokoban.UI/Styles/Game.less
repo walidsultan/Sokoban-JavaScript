@@ -1,96 +1,131 @@
 ﻿body {
 
-    &.sokoban{
-    background-image: url( '../Images/interface.png');
-    background-repeat:no-repeat;
-    background-position:top center;
-    background-size:1280px;
-    margin:0;
+    &.sokoban {
+        background-image: url( '../Images/interface.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 1280px;
+        margin: 0;
     }
-    &.menu
-     {
-         background-image: url( '../Images/menu.png');
-         background-repeat:no-repeat;
-        background-position:top center;
-        background-size:1280px;
 
+    &.menu {
+        background-image: url( '../Images/menu.png');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 1280px;
     }
-     /* prevent callout to copy image, etc when tap to hold */
-    -webkit-touch-callout: none;            
+    /* prevent callout to copy image, etc when tap to hold */
+    -webkit-touch-callout: none;
     /* prevent webkit from resizing text to fit */
-    -webkit-text-size-adjust: none;             
+    -webkit-text-size-adjust: none;
     /* prevent copy paste, to allow, change 'none' to 'text' */
-    -webkit-user-select: none; 
+    -webkit-user-select: none;
 }
 
-.block{
-    position:absolute;
-    background-size:60px;
-    width:60px;
-    height:60px;
-    background-repeat:no-repeat;
-    &.wall{
-         background-image: url( '../Images/Wall.png')  ;
-    }
-    &.box{
-         background-image: url( '../Images/Box.png') ;
-         z-index:5;
-         cursor:pointer;
-         &.onTarget{
-            background-image: url( '../Images/BoxOnTarget.png') ;
-         }
-          &.selected{
-            background-image: url( '../Images/greenBox.png') ;
-         }
-    }
-    &.floor{
-         background-image: url( '../Images/Floor.png');
-    }
-    &.target{
-         background-image: url( '../Images/Target.png');
-    }
-    &.player{
-         background-image: url( '../Images/Ghost.png');
-         z-index:10;
-    }
-}
+.block {
+    position: absolute;
+    background-size: 60px;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
 
-.gameContainer{
-    position:relative;
-}
-.gameStatus{
-        position:absolute;
-        div{
-            display:inline-block;
+    &.wall {
+        background-image: url( '../Images/Wall.png');
+    }
+
+    &.box {
+        background-image: url( '../Images/Box.png');
+        z-index: 5;
+        cursor: pointer;
+
+        &.onTarget {
+            background-image: url( '../Images/BoxOnTarget.png');
+        }
+
+        &.selected {
+            background-image: url( '../Images/greenBox.png');
         }
     }
 
-.menuContainer{
-    text-align:center;
-    color:#fff;
-    div{
-        cursor:pointer;
-        margin-bottom:20px;
-        &.disabled{
-            color:#aaa;
-            cursor:default;
+    &.floor {
+        background-image: url( '../Images/Floor.png');
+    }
+
+    &.target {
+        background-image: url( '../Images/Target.png');
+    }
+
+    &.player {
+        background-image: url( '../Images/Ghost.png');
+        z-index: 10;
+    }
+}
+
+.gameContainer {
+    position: relative;
+}
+
+.gameStatus {
+    position: absolute;
+
+    div {
+        display: inline-block;
+    }
+}
+
+.menuContainer {
+    text-align: center;
+    color: #fff;
+
+    div {
+        cursor: pointer;
+        margin-bottom: 20px;
+
+        &.disabled {
+            color: #aaa;
+            cursor: default;
         }
     }
 }
 
-@media screen and (max-width: 900px) , screen and (max-height: 680px) {
-    body{
-        &.sokoban{
-            background:none;
+.sffNavigator {
+    display: none;
+}
+
+@media screen and (max-width: 900px), screen and (max-height: 680px) {
+    body {
+        &.sokoban {
+            background: none;
         }
-         &.menu
-        {
-            background-color:#006bb0; 
+
+        &.menu {
+            background-color: #006bb0;
         }
     }
 
-    .gameStatus
-    {
-        display:none;
+    .gameStatus {
+        display: none;
+    }
+
+    .sffNavigator {
+        display: block;
+        position: absolute;
+        top:10px;
+        width:100%;
+        .icon {
+            width: 22px;
+            height: 22px;
+            background-size:22px;
+            position: absolute;
+            cursor:pointer;
+            &.reload {
+                left:5%;
+                background-image: url(../Images/reload.png);
+            }
+            &.back {
+                right:5%;
+                background-image: url(../Images/backArrow.png);
+            }
+        }
     }
 }
