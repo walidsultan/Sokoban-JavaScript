@@ -4,7 +4,8 @@
         this.inputQueue = [];
         $(window).on('addInputToQueue', this.addInputToQueue.bind(this));
         $(window).on('checkInputQueue', this.checkInputQueue.bind(this));
-        $(window).on('setAnimationStatus', this.setAnimationStatus.bind(this));
+        $(window).on('animationStarted', this.setAnimationStatus.bind(this));
+        $(window).on('animationEnded', this.setAnimationStatus.bind(this));
         $(window).on('clearInputQueue', this.clearInputQueue.bind(this));
         this.isAnimating = false;
     }, {
@@ -56,8 +57,12 @@
                 this.inputQueue.splice(0, 1);
             }
         },
-        setAnimationStatus: function (e, data) {
-            this.isAnimating = data;
+        setAnimationStatus: function (e) {
+            if (e.type == 'animationStarted') {
+                this.isAnimating = true;
+            } else {
+                this.isAnimating = false;
+            }
         },
         clearInputQueue: function (e) {
             this.inputQueue.length = 0;

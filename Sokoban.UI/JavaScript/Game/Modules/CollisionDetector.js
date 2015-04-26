@@ -5,6 +5,7 @@
         $(window).on('reloadLevel', this.clearBlocks.bind(this));
         $(window).on('addMovementIncident', this.addMovementIncident.bind(this));
         $(window).on('undoLastMovement', this.undoLastMovement.bind(this));
+        $(window).on('animationEnded', this.onAnimationEnded.bind(this));
         this.init();
         this.historyStack = [];
     }, {
@@ -40,7 +41,7 @@
                         if (!targetBlock.isOnTarget) {
                             targetBlock.setTarget(true);
                         }
-                        this.isLevelSolved();
+                        this.checkIsLevelSolved=true;
                     } else {
                         if (targetBlock.isOnTarget) {
                             targetBlock.setTarget(false);
@@ -94,6 +95,13 @@
                 } else {
                     $(window).trigger('movesDecremented');
                 }
+            }
+        },
+        onAnimationEnded: function () {
+            if(this.checkIsLevelSolved)
+            {
+                this.checkIsLevelSolved = false;
+                this.isLevelSolved();
             }
         }
     });

@@ -54,11 +54,11 @@
             this.left = left;
             this.top = top;
             var me = this;
-            $(window).trigger('setAnimationStatus', true);
+            $(window).trigger('animationStarted');
             this.domElement.prop({ 'data-left': left, 'data-top': top });
             this.domElement.animate({ 'left': skui.zoomFactor * left, 'top': skui.zoomFactor * top }, 100, 'linear', function () {
                 if (me.type == ObjectType.player) {
-                    $(window).trigger('setAnimationStatus', false);
+                    $(window).trigger('animationEnded');
                     $(window).trigger('checkInputQueue');
                 }
             });
