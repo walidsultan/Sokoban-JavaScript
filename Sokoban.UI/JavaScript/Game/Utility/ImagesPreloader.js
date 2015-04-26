@@ -6,13 +6,13 @@
     }
 }
 preload(
-    "../Images/Wall.png",
-    "../Images/Box.png",
-    "../Images/BoxOnTarget.png",
-    "../Images/greenBox.png",
-    "../Images/Floor.png",
-    "../Images/Target.png",
-    "../Images/Ghost.png",
-    "../Images/backArrow.png",
-    "../Images/reload.png"
+    "Images/Wall.png",
+    "Images/Box.png",
+    "Images/BoxOnTarget.png",
+    "Images/greenBox.png",
+    "Images/Floor.png",
+    "Images/Target.png",
+    "Images/Ghost.png",
+    "Images/backArrow.png",
+    "Images/reload.png"
 )

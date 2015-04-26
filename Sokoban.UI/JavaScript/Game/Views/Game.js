@@ -20,7 +20,7 @@
             $('body .gameStatusContainer .levelId').text(levelId);
         },
         loadGame: function () {
-            $('body .gameStatusContainer').load('/Views/Game.html', this.gameViewLoaded.bind(this));
+            $('body .gameStatusContainer').load('Views/Game.html', this.gameViewLoaded.bind(this));
         },
         gameViewLoaded: function () {
             InitializeView('app.ui.KeyboardHandler');
