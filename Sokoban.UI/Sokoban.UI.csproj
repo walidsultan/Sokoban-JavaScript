@@ -286,6 +286,7 @@
     <Content Include="Levels\SoloBan\The Run.gam" />
     <Content Include="Levels\SoloBan\The Spiral.gam" />
     <Content Include="Levels\SoloBan\which way.gam" />
+    <None Include="Properties\PublishProfiles\SokobanJS-Local.pubxml" />
     <None Include="Properties\PublishProfiles\SokobanJS.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
