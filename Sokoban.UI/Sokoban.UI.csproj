@@ -100,6 +100,7 @@
     <Content Include="JavaScript\Game\Modules\LevelLoader.js" />
     <Content Include="JavaScript\Game\Objects\Target.js" />
     <Content Include="JavaScript\Game\Objects\Wall.js" />
+    <Content Include="JavaScript\Libraries\jquery-2.1.3.min.js" />
     <Content Include="JavaScript\Libraries\jquery-ui.min.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />
     <Content Include="Levels\Easy\Level2.xml" />
