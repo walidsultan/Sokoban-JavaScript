@@ -24,10 +24,10 @@
             if (this.levelIndex <= 3) {
                 return '../Levels/Easy/level' + this.levelIndex + '.xml';
             }
-            else if (this.levelIndex <= 12) {
+            else if (this.levelIndex <= 11) {
                 return '../Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
             } else {
-                return '../Levels/MicroCosmos/level' + (this.levelIndex - 12) + '.xml';
+                return '../Levels/MicroCosmos/level' + (this.levelIndex - 11) + '.xml';
             }
         },
         drawLevel: function (e) {
