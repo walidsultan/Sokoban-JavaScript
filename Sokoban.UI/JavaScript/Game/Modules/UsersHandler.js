@@ -13,6 +13,7 @@
             this.setCookie('sokobanUser', JSON.stringify(sokobanUser), 365);
         }
         $(window).on('levelSolved', this.saveUserLevelIndex.bind(this));
+        $(window).on('setLevelIndex', this.setCurrentLevelIndex.bind(this));
 
         $(window).trigger('loadMenu', { levelIndex: this.levelIndex });
     }, {
@@ -33,12 +34,18 @@
             return "";
         },
         saveUserLevelIndex: function () {
-            var userCookie = JSON.parse(this.getCookie('sokobanUser'));
-            this.levelIndex++;
-            if (userCookie != null) {
-                userCookie.levelIndex = this.levelIndex;
-                this.setCookie('sokobanUser', JSON.stringify(userCookie), 365);
+            this.currentLevelIndex++;
+            if (this.currentLevelIndex > this.levelIndex) {
+                var userCookie = JSON.parse(this.getCookie('sokobanUser'));
+                this.levelIndex = this.currentLevelIndex;
+                if (userCookie != null) {
+                    userCookie.levelIndex = this.levelIndex;
+                    this.setCookie('sokobanUser', JSON.stringify(userCookie), 365);
+                }
             }
+        },
+        setCurrentLevelIndex: function (e,data) {
+            this.currentLevelIndex = data;
         }
     });
 })(skui.resolve('app.ui'));
