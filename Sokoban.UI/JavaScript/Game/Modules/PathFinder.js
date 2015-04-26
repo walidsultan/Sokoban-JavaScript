@@ -60,8 +60,12 @@
                 this.player.top = originalPlayerPoistion.top;
                 selectedBox.setSelection(false);
 
-                if (targetSolution.length > 0) {
+                if (targetSolution!=null && targetSolution.length > 0) {
+                    //Solution Found
                     $(window).trigger('boxToTargetPathFound', [targetSolution[0].playerPath]);
+                } else {
+                    //Wrong Path
+                    $(window).trigger('highlightError', [targetBlock]);
                 }
             }
         },

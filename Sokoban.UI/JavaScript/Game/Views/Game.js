@@ -9,6 +9,7 @@
         $(window).on('reloadLevel', this.resetGameCounters.bind(this))
         $(window).on('movesDecremented', this.decrementMovesCount.bind(this));
         $(window).on('pushesDecremented', this.decrementPushesCount.bind(this));
+        $(window).on('highlightError', this.highlightError.bind(this));
 
         this.gameTime = 0;
         this.movesCount = 0;
@@ -83,6 +84,23 @@
         },
         reloadLevel: function () {
             $(window).trigger('reloadLevel');
+        },
+        highlightError: function (e, targetBlock) {
+            var borderWidth = parseInt($('.errorBlock').css('border-left-width'));
+            $('.errorBlock').appendTo('.gameContainer').css({
+                'left': targetBlock.domElement.position().left,
+                'top': targetBlock.domElement.position().top,
+                'width': targetBlock.domElement[0].getBoundingClientRect().width - borderWidth*2,
+                'height': targetBlock.domElement[0].getBoundingClientRect().height - borderWidth * 2,
+                'display': 'block'
+            });
+
+            var me = this;
+            setTimeout(function () {
+                $('.errorBlock').appendTo('.gameContainer').css({
+                    'display': 'none'
+                });
+            }, 500);
         }
     });
 })(skui.resolve('app.ui'));
