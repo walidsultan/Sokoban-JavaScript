@@ -8,8 +8,7 @@
     }, {
         init: function () {
             $('body').prop('class', 'sokoban');
-
-            var levelPath = '../Levels/MicroCosmos/level' + this.levelIndex + '.xml';
+            var levelPath = this.getLevelPath();
             var levelDoc = loadXMLDoc(levelPath);
             this.levelRows = levelDoc.getElementsByTagName("L");
             this.levelRendered = false;
@@ -21,8 +20,18 @@
             $(window).trigger('updateLevelName', levelId);
             $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
         },
+        getLevelPath: function () {
+            if (this.levelIndex <= 3) {
+                return '../Levels/Easy/level' + this.levelIndex + '.xml';
+            }
+            else if (this.levelIndex <= 12) {
+                return '../Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
+            } else {
+                return '../Levels/MicroCosmos/level' + (this.levelIndex - 12) + '.xml';
+            }
+        },
         drawLevel: function (e) {
-            if (!this.levelRendered && this.levelRows!=null) {
+            if (!this.levelRendered && this.levelRows != null) {
                 this.levelRendered = true;
                 for (i = 0; i < this.levelRows.length; i++) {
                     var row = this.levelRows[i].childNodes[0].nodeValue;
@@ -79,7 +88,7 @@
             this.levelIndex++;
             $(window).trigger('reloadLevel');
         },
-        setLevelIndex: function (e,data) {
+        setLevelIndex: function (e, data) {
             this.levelIndex = data;
             this.init();
         },

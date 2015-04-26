@@ -102,6 +102,9 @@
     <Content Include="JavaScript\Game\Objects\Wall.js" />
     <Content Include="JavaScript\Libraries\jquery-ui.min.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />
+    <Content Include="Levels\Easy\Level2.xml" />
+    <Content Include="Levels\Easy\Level3.xml" />
+    <Content Include="Levels\Easy\Level1.xml" />
     <Content Include="Levels\MicroCosmos\level0.xml" />
     <Content Include="Levels\MicroCosmos\level1.xml" />
     <Content Include="Levels\MicroCosmos\level10.xml" />
@@ -143,6 +146,16 @@
     <Content Include="Levels\MicroCosmos\level7.xml" />
     <Content Include="Levels\MicroCosmos\level8.xml" />
     <Content Include="Levels\MicroCosmos\level9.xml" />
+    <Content Include="Levels\SokobanJunior\Level1.xml" />
+    <Content Include="Levels\SokobanJunior\Level10.xml" />
+    <Content Include="Levels\SokobanJunior\Level2.xml" />
+    <Content Include="Levels\SokobanJunior\Level3.xml" />
+    <Content Include="Levels\SokobanJunior\Level4.xml" />
+    <Content Include="Levels\SokobanJunior\Level5.xml" />
+    <Content Include="Levels\SokobanJunior\Level6.xml" />
+    <Content Include="Levels\SokobanJunior\Level7.xml" />
+    <Content Include="Levels\SokobanJunior\Level8.xml" />
+    <Content Include="Levels\SokobanJunior\Level9.xml" />
     <Content Include="Levels\SokoHard\Copy %2810%29 of sokohard3.xml" />
     <Content Include="Levels\SokoHard\Copy %2811%29 of sokohard3.xml" />
     <Content Include="Levels\SokoHard\Copy %2812%29 of sokohard3.xml" />

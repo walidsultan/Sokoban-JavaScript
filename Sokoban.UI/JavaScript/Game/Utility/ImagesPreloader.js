@@ -12,5 +12,7 @@ preload(
     "../Images/greenBox.png",
     "../Images/Floor.png",
     "../Images/Target.png",
-    "../Images/Ghost.png"
+    "../Images/Ghost.png",
+    "../Images/backArrow.png",
+    "../Images/reload.png"
 )
