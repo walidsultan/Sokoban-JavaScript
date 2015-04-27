@@ -15,9 +15,10 @@
         loadXMLDoc: function (levelPath) {
             var me = this;
             $.get(levelPath, function (data) {
-                me.levelRows = data.getElementsByTagName("L");
+                var xmlDoc = $(data);
+                me.levelRows = xmlDoc.find("L");
                 me.levelRendered = false;
-                var levelIdentifier = data.getElementsByTagName("Level");
+                var levelIdentifier = xmlDoc.find("Level");
                 var levelWidth = levelIdentifier[0].getAttribute('Width');
                 var levelHeight = levelIdentifier[0].getAttribute('Height');
                 var levelId = levelIdentifier[0].getAttribute('Id');

@@ -61,9 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\backArrow.png" />
-    <Content Include="Images\Box.PNG" />
-    <Content Include="Images\BoxOnTarget.PNG" />
-    <Content Include="Images\Floor.PNG" />
+    <Content Include="Images\Box.png" />
+    <Content Include="Images\BoxOnTarget.png" />
+    <Content Include="Images\Floor.png" />
     <Content Include="Images\Ghost.png" />
     <Content Include="Images\greenBox.png" />
     <Content Include="Images\interface.png" />
@@ -76,7 +76,7 @@
     <Content Include="Images\sokoban 32.png" />
     <Content Include="Images\sokoban 42.png" />
     <Content Include="Images\Sprite.png" />
-    <Content Include="Images\target.png" />
+    <Content Include="Images\Target.png" />
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
