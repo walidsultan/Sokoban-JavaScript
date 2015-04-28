@@ -135,11 +135,48 @@
         }
     }
 
-    .ui-dialog{
-      top: 0 !important;
-      left: 0 !important;
-      width: 99% !important;
-      height: 99% !important;
-      padding:0;
+    .ui-dialog {
+        top: 2% !important;
+        left: 2% !important;
+        width: 95% !important;
+        height: 95% !important;
+        border-radius: 135px;
+        padding: 0;
+
+        .ui-dialog-titlebar {
+            background: none;
+            text-align: center;
+            border: none;
+            color: #26C920;
+            padding-top: 9%;
+
+            button {
+                display:none;
+             }
+        }
+
+        .ui-dialog-content {
+            color: #26C920;
+            margin-top: 5%;
+        }
+
+        .ui-dialog-buttonpane {
+            border: 0;
+
+            button {
+                background: url('../Images/next.png');
+                border: none;
+                color: transparent;
+                background-color: transparent;
+
+                &:focus {
+                    border: none;
+                }
+            }
+
+            .ui-icon {
+                display: none;
+            }
+        }
     }
 }
