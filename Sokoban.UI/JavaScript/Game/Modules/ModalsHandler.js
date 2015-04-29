@@ -25,9 +25,9 @@
                 ],
                 create: function () {
                     //Set next button size
-                    $(' .ui-dialog-buttonpane button').css('width', skui.zoomFactor)
-                                                 .css('height', skui.zoomFactor)
-                                                 .css('backgroundSize', skui.zoomFactor);
+                    //$(' .ui-dialog-buttonpane button').css('width', skui.zoomFactor)
+                    //                             .css('height', skui.zoomFactor)
+                    //                             .css('backgroundSize', skui.zoomFactor);
                 }
             });
         }

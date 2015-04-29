@@ -69,6 +69,7 @@
     <Content Include="Images\interface.png" />
     <Content Include="Images\menu.png" />
     <Content Include="Images\messagebox.png" />
+    <Content Include="Images\next.png" />
     <Content Include="Images\player.png" />
     <Content Include="Images\reload.png" />
     <Content Include="Images\sokoban 128.png" />
@@ -80,6 +81,7 @@
     <Content Include="Images\Wall.PNG" />
     <Content Include="Images\x.png" />
     <Content Include="Images\x2.png" />
+    <Content Include="Images\X_mark.png" />
     <Content Include="JavaScript\Game\Views\Game.js" />
     <Content Include="JavaScript\Game\Views\Menu.js" />
     <Content Include="JavaScript\Game\Modules\UsersHandler.js" />

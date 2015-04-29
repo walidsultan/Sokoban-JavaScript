@@ -140,19 +140,21 @@
         left: 2% !important;
         width: 95% !important;
         height: 95% !important;
-        border-radius: 135px;
+        border-radius: 8px;
         padding: 0;
 
         .ui-dialog-titlebar {
             background: none;
-            text-align: center;
             border: none;
             color: #26C920;
-            padding-top: 9%;
 
-            button {
-                display:none;
-             }
+            .ui-dialog-titlebar-close {
+                border:none;
+                background: none;
+                .ui-icon-closethick {
+                    background: url('../Images/X_mark.png');
+                }
+            }
         }
 
         .ui-dialog-content {
