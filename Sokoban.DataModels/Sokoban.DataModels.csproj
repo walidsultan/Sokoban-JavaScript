@@ -70,9 +70,6 @@
     <Compile Include="Solution.cs">
       <DependentUpon>Sokoban.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Sokoban.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Sokoban.tt</DependentUpon>
     </Compile>

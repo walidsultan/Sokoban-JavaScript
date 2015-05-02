@@ -15,13 +15,10 @@ namespace Sokoban.WebAPI.Controllers
     {
         [HttpPost]
         public void Post(User user) {
+            user.CreateDate = DateTime.UtcNow;
+
             UsersRepository usersRepository = new UsersRepository();
             usersRepository.InsertUser(user);
         }
-        //public void AddException(Sokoban.DataModels.Exception exception)
-        //{
-        //    ExceptionsRepository exceptionsRepository = new ExceptionsRepository();
-        //    exceptionsRepository.InsertException(exception);
-        //}
     }
 }

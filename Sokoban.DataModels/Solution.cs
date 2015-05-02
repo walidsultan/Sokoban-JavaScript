@@ -20,6 +20,7 @@ namespace Sokoban.DataModels
         public int Moves { get; set; }
         public int Pushes { get; set; }
         public int Time { get; set; }
+        public System.DateTime CreateDate { get; set; }
     
         public virtual User User { get; set; }
     }

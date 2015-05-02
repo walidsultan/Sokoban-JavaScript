@@ -4,17 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SokobanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
+    <Schema Namespace="SokobanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Exceptions">
           <Key>
             <PropertyRef Name="Id" />
@@ -22,6 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Message" Type="ntext" Nullable="false" />
           <Property Name="Stack" Type="ntext" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Solutions">
           <Key>
@@ -33,6 +24,7 @@
           <Property Name="Moves" Type="int" Nullable="false" />
           <Property Name="Pushes" Type="int" Nullable="false" />
           <Property Name="Time" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -41,6 +33,7 @@
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="200" />
           <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_Solutions_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
@@ -55,7 +48,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SokobanModelStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exceptions" EntityType="Self.Exceptions" Schema="walid" store:Type="Tables" />
           <EntitySet Name="Solutions" EntityType="Self.Solutions" Schema="walid" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="walid" store:Type="Tables" />
@@ -64,28 +56,27 @@
             <End Role="Solutions" EntitySet="Solutions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SokobanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
+        <EntityContainer Name="SokobanEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Exceptions" EntityType="SokobanModel.Exception" />
+          <EntitySet Name="Solutions" EntityType="SokobanModel.Solution" />
+          <EntitySet Name="Users" EntityType="SokobanModel.User" />
+          <AssociationSet Name="FK_Solutions_Users" Association="SokobanModel.FK_Solutions_Users">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Solution" EntitySet="Solutions" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Exception">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Stack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Stack" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Solution">
           <Key>
@@ -97,7 +88,8 @@
           <Property Name="Moves" Type="Int32" Nullable="false" />
           <Property Name="Pushes" Type="Int32" Nullable="false" />
           <Property Name="Time" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_Solutions_Users" FromRole="Solutions" ToRole="Users" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="User" Relationship="SokobanModel.FK_Solutions_Users" FromRole="Solution" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -106,74 +98,57 @@
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Solutions" Relationship="Self.FK_Solutions_Users" FromRole="Users" ToRole="Solutions" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Solutions" Relationship="SokobanModel.FK_Solutions_Users" FromRole="User" ToRole="Solution" />
         </EntityType>
         <Association Name="FK_Solutions_Users">
-          <End Role="Users" Type="Self.User" Multiplicity="1" />
-          <End Role="Solutions" Type="Self.Solution" Multiplicity="*" />
+          <End Type="SokobanModel.User" Role="User" Multiplicity="1" />
+          <End Type="SokobanModel.Solution" Role="Solution" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Users">
+            <Principal Role="User">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Solutions">
+            <Dependent Role="Solution">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="SokobanEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="Exceptions" EntityType="Self.Exception" />
-          <EntitySet Name="Solutions" EntityType="Self.Solution" />
-          <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK_Solutions_Users" Association="Self.FK_Solutions_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Solutions" EntitySet="Solutions" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SokobanModelStoreContainer" CdmEntityContainer="SokobanEntities">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SokobanModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Exceptions">
             <EntityTypeMapping TypeName="SokobanModel.Exception">
               <MappingFragment StoreEntitySet="Exceptions">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Stack" ColumnName="Stack" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Solutions">
             <EntityTypeMapping TypeName="SokobanModel.Solution">
               <MappingFragment StoreEntitySet="Solutions">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LevelIndex" ColumnName="LevelIndex" />
-                <ScalarProperty Name="Moves" ColumnName="Moves" />
-                <ScalarProperty Name="Pushes" ColumnName="Pushes" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Pushes" ColumnName="Pushes" />
+                <ScalarProperty Name="Moves" ColumnName="Moves" />
+                <ScalarProperty Name="LevelIndex" ColumnName="LevelIndex" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="SokobanModel.User">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

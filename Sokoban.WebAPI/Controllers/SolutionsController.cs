@@ -16,6 +16,8 @@ namespace Sokoban.WebAPI.Controllers
         [HttpPost]
         public void Post(Solution solution)
         {
+            solution.CreateDate = DateTime.UtcNow;
+
             SolutionsRepository solutionsRepository = new SolutionsRepository();
             solutionsRepository.InsertSolution(solution);
         }

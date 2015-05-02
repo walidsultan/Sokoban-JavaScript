@@ -5,11 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="689e39a9a82a4855aa77567135ad44b1" Name="Diagram1">
-        <EntityTypeShape EntityType="SokobanModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SokobanModel.Exception" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SokobanModel.Solution" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SokobanModel.User" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <AssociationConnector Association="SokobanModel.FK_Solutions_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SokobanModel.Exception" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SokobanModel.Solution" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="SokobanModel.User" Width="1.5" PointX="0.75" PointY="1.25" />
+        <AssociationConnector Association="SokobanModel.FK_Solutions_Users" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

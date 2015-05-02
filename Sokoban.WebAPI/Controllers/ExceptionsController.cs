@@ -16,6 +16,8 @@ namespace Sokoban.WebAPI.Controllers
         [HttpPost]
         public void Post(Sokoban.DataModels.Exception exception)
         {
+            exception.CreateDate = DateTime.UtcNow;
+
             ExceptionsRepository exceptionsRepository = new ExceptionsRepository();
             exceptionsRepository.InsertException(exception);
         }

@@ -22,6 +22,7 @@ namespace Sokoban.DataModels
         public System.Guid Id { get; set; }
         public string Name { get; set; }
         public string IPAddress { get; set; }
+        public System.DateTime CreateDate { get; set; }
     
         public virtual ICollection<Solution> Solutions { get; set; }
     }

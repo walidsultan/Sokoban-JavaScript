@@ -17,5 +17,6 @@ namespace Sokoban.DataModels
         public int Id { get; set; }
         public string Message { get; set; }
         public string Stack { get; set; }
+        public System.DateTime CreateDate { get; set; }
     }
 }
