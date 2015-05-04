@@ -26,6 +26,7 @@
             $('body .gameStatusContainer').load('Views/Game.html', this.gameViewLoaded.bind(this));
         },
         gameViewLoaded: function () {
+            InitializeView('app.ui.SwipeHandler');
             InitializeView('app.ui.KeyboardHandler');
             InitializeView('app.ui.ModalsHandler');
             InitializeView('app.ui.StateManager');
@@ -34,7 +35,7 @@
             InitializeView('app.ui.LevelLoader');
 
             $(window).trigger('setLevelIndex', this.levelIndex);
-            $('.sffNavigator .back').on('touchstart mousedown',this.onBackMouseDown.bind(this));
+            $('.sffNavigator .back').on('touchstart mousedown', this.onBackMouseDown.bind(this));
             $('.sffNavigator .back').on('touchend mouseup', this.onBackMouseUp.bind(this));
             $('.sffNavigator .reload').click(this.reloadLevel.bind(this));
         },
@@ -85,14 +86,14 @@
         },
         onBackMouseDown: function (e) {
             var currentTime = (new Date()).getTime();
-            if (!this.mouseDown && (currentTime-this.lastMouseDownTime)>200) {
+            if (!this.mouseDown && (currentTime - this.lastMouseDownTime) > 200) {
                 this.mouseDown = true;
                 this.lastMouseDownTime = currentTime;
                 this.undoLastMovement();
             }
         },
         undoLastMovement: function () {
-            if(!this.mouseDown) return;
+            if (!this.mouseDown) return;
 
             $(window).trigger('undoLastMovement');
 
@@ -109,7 +110,7 @@
             $('.errorBlock').clone().appendTo('.gameContainer').css({
                 'left': targetBlock.domElement.position().left,
                 'top': targetBlock.domElement.position().top,
-                'width': targetBlock.domElement[0].getBoundingClientRect().width - borderWidth*2,
+                'width': targetBlock.domElement[0].getBoundingClientRect().width - borderWidth * 2,
                 'height': targetBlock.domElement[0].getBoundingClientRect().height - borderWidth * 2,
                 'display': 'block'
             });
