@@ -131,6 +131,7 @@
     <Content Include="Images\X_mark.png" />
     <Content Include="JavaScript\Game\Main.js" />
     <Content Include="JavaScript\Game\Modules\DatabaseHandler.js" />
+    <Content Include="JavaScript\Game\Modules\SwipeHandler.js" />
     <Content Include="JavaScript\Game\Views\Game.js" />
     <Content Include="JavaScript\Game\Views\Menu.js" />
     <Content Include="JavaScript\Game\Modules\UsersHandler.js" />
