@@ -133,6 +133,7 @@
     <Content Include="JavaScript\Game\Modules\DatabaseHandler.js" />
     <Content Include="JavaScript\Game\Modules\SwipeHandler.js" />
     <Content Include="JavaScript\Game\Views\Game.js" />
+    <Content Include="JavaScript\Game\Views\LevelSelector.js" />
     <Content Include="JavaScript\Game\Views\Menu.js" />
     <Content Include="JavaScript\Game\Modules\UsersHandler.js" />
     <Content Include="JavaScript\Game\Modules\ModalsHandler.js" />
@@ -245,6 +246,7 @@
     <Content Include="Styles\jquery-ui.structure.min.css" />
     <Content Include="Styles\jquery-ui.theme.min.css" />
     <Content Include="Views\Game.html" />
+    <Content Include="Views\LevelSelector.html" />
     <Content Include="Views\Menu.html" />
     <Content Include="Web.config" />
   </ItemGroup>
