@@ -44,9 +44,10 @@
             });
             $('body .menuContainer .continue').click(function () {
                 if (!$(this).hasClass('disabled')) {
-                    InitializeView('app.ui.LevelSelector');
+                    InitializeView('app.ui.Game');
+                 //   InitializeView('app.ui.LevelSelector');
                     me.unloadMenu();
-                    //$(window).trigger('setGameIndex', [me.levelIndex]);
+                    $(window).trigger('setGameIndex', [me.levelIndex]);
                 }
             });
             $('body .menuContainer .howToPlay').click(function () {

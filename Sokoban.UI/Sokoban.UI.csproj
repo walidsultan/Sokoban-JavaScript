@@ -118,6 +118,7 @@
     <Content Include="Images\messagebox.png" />
     <Content Include="Images\next.png" />
     <Content Include="Images\player.png" />
+    <Content Include="Images\processing.gif" />
     <Content Include="Images\reload.png" />
     <Content Include="Images\sokoban 128.png" />
     <Content Include="Images\sokoban 16.png" />
@@ -131,6 +132,7 @@
     <Content Include="Images\X_mark.png" />
     <Content Include="JavaScript\Game\Main.js" />
     <Content Include="JavaScript\Game\Modules\DatabaseHandler.js" />
+    <Content Include="JavaScript\Game\Modules\LevelSolver.js" />
     <Content Include="JavaScript\Game\Modules\SwipeHandler.js" />
     <Content Include="JavaScript\Game\Views\Game.js" />
     <Content Include="JavaScript\Game\Views\LevelSelector.js" />
@@ -155,6 +157,7 @@
     <Content Include="JavaScript\Libraries\fastclick.js" />
     <Content Include="JavaScript\Libraries\jquery-2.1.3.min.js" />
     <Content Include="JavaScript\Libraries\jquery-ui.min.js" />
+    <Content Include="JavaScript\Libraries\jquery.blockUI.js" />
     <Content Include="JavaScript\Libraries\less.min.js" />
     <Content Include="Levels\Easy\Level2.xml" />
     <Content Include="Levels\Easy\Level3.xml" />
