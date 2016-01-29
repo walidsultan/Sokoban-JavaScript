@@ -56,7 +56,7 @@
            
         },
         unloadMenu: function () {
-            $('body .menuContainer').remove();
+            $('body .menuContainer').html('').attr('style', '');
             $(window).off('resize.menu');
         }
     });

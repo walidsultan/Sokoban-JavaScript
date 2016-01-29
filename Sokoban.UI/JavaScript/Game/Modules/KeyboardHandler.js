@@ -42,6 +42,9 @@
                 case 109:
                     $(window).trigger('loadPreviousLevel');
                     break;
+                case 27:
+                    $(window).trigger('returnBack');
+                    break;
             }
             if (direction != null) {
                 if (this.isAnimating) {

@@ -10,6 +10,7 @@
         $(window).on('movesDecremented', this.decrementMovesCount.bind(this));
         $(window).on('pushesDecremented', this.decrementPushesCount.bind(this));
         $(window).on('highlightError', this.highlightError.bind(this));
+        $(window).on('returnBack', this.returnToMenu.bind(this));
 
         this.gameTime = 0;
         this.movesCount = 0;
@@ -133,6 +134,16 @@
             if (seconds < 10) {seconds = "0"+seconds;}
             var time    = hours+':'+minutes+':'+seconds;
             return time;
+        },
+        returnToMenu: function () {
+            this.unloadGame();
+            InitializeView('app.ui.Menu');
+        },
+        unloadGame: function () {
+            $(window).off();
+            clearInterval(this.intervalId);
+            $('body .gameContainer').html('');
+            $('body .gameStatusContainer').html('');
         }
     });
 })(skui.resolve('app.ui'));
