@@ -28,7 +28,6 @@
         },
         gameViewLoaded: function () {
             InitializeView('app.ui.SwipeHandler');
-            InitializeView('app.ui.KeyboardHandler');
             InitializeView('app.ui.ModalsHandler');
             InitializeView('app.ui.StateManager');
             InitializeView('app.ui.PathFinder');
