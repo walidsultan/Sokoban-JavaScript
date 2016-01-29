@@ -32,8 +32,10 @@
             }
             else if (this.levelIndex <= 11) {
                 return 'Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
-            } else {
+            } else if (this.levelIndex <= 51) {
                 return 'Levels/MicroCosmos/level' + (this.levelIndex - 11) + '.xml';
+            }else if (this.levelIndex <= 91) {
+                return 'Levels/nabokocosmos/naboko cosom ' + (this.levelIndex - 50) + '.xml';
             }
         },
         drawLevel: function (e) {

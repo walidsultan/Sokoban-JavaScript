@@ -94,6 +94,10 @@
 
 .levelSelectorContainer {
     color: #FFF;
+    top: 0;
+    position: absolute;
+    width: 50%;
+    left: 26%;
 
     .levelGroup {
         .title {
@@ -109,7 +113,7 @@
             &.unlocked {
                 cursor: pointer;
                 border-color: #11a72f;
-            background-color: #fff;
+                background-color: #fff;
             }
         }
 
@@ -147,9 +151,9 @@
     border: solid 3px #ff0000;
 }
 
-.solverProcessing{
-        max-width: 100%;
-         max-height: 100%;
+.solverProcessing {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 @media screen and (max-width: 900px), screen and (max-height: 680px) {
@@ -197,7 +201,8 @@
             background: white;
             color: #666666;
             margin: 0 auto;
-            left: 43%;
+            left: 50%;
+            margin-left: -33px;
             padding: 0 5px;
         }
     }
@@ -263,5 +268,11 @@
                 display: none;
             }
         }
+    }
+
+    .levelSelectorContainer {
+        width: 100%;
+        left: 0;
+
     }
 }

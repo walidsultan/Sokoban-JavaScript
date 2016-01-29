@@ -44,8 +44,8 @@
             });
             $('body .menuContainer .continue').click(function () {
                 if (!$(this).hasClass('disabled')) {
-                    InitializeView('app.ui.Game');
-                 //   InitializeView('app.ui.LevelSelector');
+                 //   InitializeView('app.ui.Game');
+                    InitializeView('app.ui.LevelSelector', {levelIndex:me.levelIndex});
                     me.unloadMenu();
                     $(window).trigger('setGameIndex', [me.levelIndex]);
                 }

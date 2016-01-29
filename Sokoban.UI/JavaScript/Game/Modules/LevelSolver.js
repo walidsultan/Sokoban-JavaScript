@@ -10,7 +10,8 @@
             var levelObjectsJson = JSON.stringify(levelObjects);
             var me = this;
             var xhr = $.ajax({
-                url: "http://Walidaly.net/SokobanSolver/Solve",
+                url:"http://localhost:54873/solve",
+                //url: "http://Walidaly.net/SokobanSolver/Solve",
                 data: levelObjectsJson,
                 type: 'POST',
                 contentType: "application/json",
