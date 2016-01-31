@@ -51,6 +51,7 @@
         returnToMenu: function () {
             if (this.isGroupSelected) {
                 $('body .levelSelectorContainer').load('Views/LevelSelector.html', this.levelSelectorLoaded.bind(this));
+                this.isGroupSelected = false;
             } else {
                 $(window).off();
                 this.unloadLevelSelector();
