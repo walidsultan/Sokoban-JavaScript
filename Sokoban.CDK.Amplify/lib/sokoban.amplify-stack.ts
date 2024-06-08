@@ -10,11 +10,9 @@ export class SokobanAmplifyStack extends cdk.Stack {
 
     const amplifyApp = new amplify.App(this, "Sokoban-JS", {
       sourceCodeProvider: new amplify.GitHubSourceCodeProvider({
-        owner: "[Repository-Owner]",
-        repository: "[Repository-Name]",
-        oauthToken: cdk.SecretValue.secretsManager("[Secret-Name]", {
-          jsonField: "[Secret-Key]",
-        }),
+        owner: "walidsultan",
+        repository: "Sokoban-JavaScript",
+        oauthToken: cdk.SecretValue.secretsManager('github-token'),
       }),
     });
   }

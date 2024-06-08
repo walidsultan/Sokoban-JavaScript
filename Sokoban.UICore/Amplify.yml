@@ -1,0 +1,7 @@
+version: 1
+frontend:
+  phases: 
+  artifacts:
+    baseDirectory: wwwroot
+    files:
+      - "**/*"
