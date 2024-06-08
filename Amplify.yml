@@ -2,6 +2,6 @@ version: 1
 frontend:
   phases: 
   artifacts:
-    baseDirectory: wwwroot
+    baseDirectory: Sokoban.UICore/wwwroot
     files:
       - "**/*"
