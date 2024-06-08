@@ -1,0 +1,680 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="---Index.html" />
+    <None Remove="wwwroot\Images\backArrow.png" />
+    <None Remove="wwwroot\Images\Box.png" />
+    <None Remove="wwwroot\Images\BoxOnTarget.png" />
+    <None Remove="wwwroot\Images\Floor.png" />
+    <None Remove="wwwroot\Images\Ghost.png" />
+    <None Remove="wwwroot\Images\greenBox.png" />
+    <None Remove="wwwroot\Images\interface.png" />
+    <None Remove="wwwroot\Images\menu.png" />
+    <None Remove="wwwroot\Images\messagebox.png" />
+    <None Remove="wwwroot\Images\next.png" />
+    <None Remove="wwwroot\Images\player.png" />
+    <None Remove="wwwroot\Images\processing.gif" />
+    <None Remove="wwwroot\Images\reload.png" />
+    <None Remove="wwwroot\Images\sokoban 128.png" />
+    <None Remove="wwwroot\Images\sokoban 16.png" />
+    <None Remove="wwwroot\Images\sokoban 32.png" />
+    <None Remove="wwwroot\Images\sokoban 42.png" />
+    <None Remove="wwwroot\Images\Sprite.png" />
+    <None Remove="wwwroot\Images\Target.png" />
+    <None Remove="wwwroot\Images\Wall.PNG" />
+    <None Remove="wwwroot\Images\x.png" />
+    <None Remove="wwwroot\Images\x2.png" />
+    <None Remove="wwwroot\Images\X_mark.png" />
+    <None Remove="wwwroot\JavaScript\Game\Main.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\CollisionDetector.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\DatabaseHandler.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\DimensionsHandler.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\KeyboardHandler.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\LevelLoader.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\LevelSolver.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\ModalsHandler.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\PathFinder.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\StateManager.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\SwipeHandler.js" />
+    <None Remove="wwwroot\JavaScript\Game\Modules\UsersHandler.js" />
+    <None Remove="wwwroot\JavaScript\Game\Objects\Block.js" />
+    <None Remove="wwwroot\JavaScript\Game\Objects\Box.js" />
+    <None Remove="wwwroot\JavaScript\Game\Objects\Floor.js" />
+    <None Remove="wwwroot\JavaScript\Game\Objects\Player.js" />
+    <None Remove="wwwroot\JavaScript\Game\Objects\Target.js" />
+    <None Remove="wwwroot\JavaScript\Game\Objects\Wall.js" />
+    <None Remove="wwwroot\JavaScript\Game\Utility\Enums.js" />
+    <None Remove="wwwroot\JavaScript\Game\Utility\Helper.js" />
+    <None Remove="wwwroot\JavaScript\Game\Utility\ImagesPreloader.js" />
+    <None Remove="wwwroot\JavaScript\Game\Views\Game.js" />
+    <None Remove="wwwroot\JavaScript\Game\Views\LevelSelector.js" />
+    <None Remove="wwwroot\JavaScript\Game\Views\Menu.js" />
+    <None Remove="wwwroot\JavaScript\Libraries\fastclick.js" />
+    <None Remove="wwwroot\JavaScript\Libraries\jquery-2.1.3.min.js" />
+    <None Remove="wwwroot\JavaScript\Libraries\jquery-ui.min.js" />
+    <None Remove="wwwroot\JavaScript\Libraries\jquery.blockUI.js" />
+    <None Remove="wwwroot\JavaScript\Libraries\less.min.js" />
+    <None Remove="wwwroot\Levels\Easy\Level1.xml" />
+    <None Remove="wwwroot\Levels\Easy\Level2.xml" />
+    <None Remove="wwwroot\Levels\Easy\Level3.xml" />
+    <None Remove="wwwroot\Levels\microban\microban 100.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 146.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 147.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 152.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 154.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 3.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 60.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 61.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 62.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 64.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 65.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 66.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 70.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 71.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 72.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 74.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 75.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 76.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 77.gam" />
+    <None Remove="wwwroot\Levels\microban\microban 78.gam" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level0.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level1.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level10.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level11.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level12.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level13.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level14.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level15.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level16.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level17.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level18.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level19.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level2.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level20.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level21.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level22.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level23.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level24.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level25.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level26.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level27.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level28.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level29.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level3.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level30.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level31.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level32.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level33.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level34.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level35.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level36.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level37.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level38.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level39.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level4.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level40.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level5.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level6.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level7.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level8.xml" />
+    <None Remove="wwwroot\Levels\MicroCosmos\level9.xml" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 16.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 17.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 18.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 19.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 2.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 20.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 21.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 22.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 23.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 24.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 25.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 26.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 27.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 28.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 29.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 3.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 30.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 31.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 32.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 33.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 34.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 35.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 36.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 37.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 38.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 39.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 4.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 40.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 5.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 6.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 7.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naboko cosom 8.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 10.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 11.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 12.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 13.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 14.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 15.gam" />
+    <None Remove="wwwroot\Levels\nabokocosmos\naoboko cosmos 9.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 10.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 13.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 16.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 17.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 18.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 19.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 20.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 4.gam" />
+    <None Remove="wwwroot\Levels\Scoria\scoria 6.gam" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level1.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level10.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level2.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level3.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level4.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level5.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level6.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level7.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level8.xml" />
+    <None Remove="wwwroot\Levels\SokobanJunior\Level9.xml" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen71.gam" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen72.gam" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen73.gam" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen74.gam" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen75.gam" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen77.gam" />
+    <None Remove="wwwroot\Levels\SokoGen\sokogen78.gam" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (10) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (11) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (12) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (13) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (14) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (15) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (6) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (7) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (8) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\Copy (9) of sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard1.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard2.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard3.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard4.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard5.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard6.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard7.xml" />
+    <None Remove="wwwroot\Levels\SokoHard\sokohard8.xml" />
+    <None Remove="wwwroot\Levels\SoloBan\scattered.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\solo ban 3.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\solo ban 4gam.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\solo ban 5.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\solo ban.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\The Run.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\The Spiral.gam" />
+    <None Remove="wwwroot\Levels\SoloBan\which way.gam" />
+    <None Remove="wwwroot\Styles\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_glass_75_dadada_1x400.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <None Remove="wwwroot\Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <None Remove="wwwroot\Styles\images\ui-icons_222222_256x240.png" />
+    <None Remove="wwwroot\Styles\images\ui-icons_2e83ff_256x240.png" />
+    <None Remove="wwwroot\Styles\images\ui-icons_454545_256x240.png" />
+    <None Remove="wwwroot\Styles\images\ui-icons_888888_256x240.png" />
+    <None Remove="wwwroot\Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <None Remove="wwwroot\Styles\jquery-ui.min.css" />
+    <None Remove="wwwroot\Styles\jquery-ui.structure.min.css" />
+    <None Remove="wwwroot\Styles\jquery-ui.theme.min.css" />
+    <None Remove="wwwroot\Views\Game.html" />
+    <None Remove="wwwroot\Views\LevelSelector.html" />
+    <None Remove="wwwroot\Views\Menu.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="---Index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 16.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 17.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 18.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 19.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 2.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 20.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 21.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 22.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 23.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 24.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 25.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 26.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 27.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 28.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 29.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 3.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 30.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 31.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 32.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 33.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 34.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 35.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 36.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 37.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 38.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 39.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 4.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 40.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 5.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 6.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 7.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naboko cosom 8.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 10.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 11.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 12.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 13.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 14.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 15.gam" />
+    <Content Include="wwwroot\Levels\nabokocosmos\naoboko cosmos 9.gam" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.21.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters.CoreServices" Version="1.1.0" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\htmlpage.html" />
+    <None Include="wwwroot\Images\FeatureGraphic.png" />
+    <None Include="wwwroot\Images\undo.png" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 16.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 17.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 18.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 19.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 2.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 20.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 21.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 22.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 23.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 24.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 25.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 26.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 27.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 28.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 29.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 3.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 30.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 31.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 32.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 33.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 34.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 35.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 36.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 37.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 38.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 39.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 4.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 40.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 5.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 6.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 7.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naboko cosom 8.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 10.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 11.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 12.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 13.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 14.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 15.xml" />
+    <None Include="wwwroot\Levels\nabokocosmos\naoboko cosom 9.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Main.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\CollisionDetector.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\DatabaseHandler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\DimensionsHandler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\KeyboardHandler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\LevelLoader.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\LevelSolver.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\ModalsHandler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\PathFinder.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\StateManager.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\SwipeHandler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Modules\UsersHandler.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Objects\Block.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Objects\Box.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Objects\Floor.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Objects\Player.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Objects\Target.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Objects\Wall.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Utility\Enums.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Utility\Helper.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Utility\ImagesPreloader.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Views\Game.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Views\LevelSelector.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Game\Views\Menu.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Libraries\fastclick.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Libraries\jquery-2.1.3.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Libraries\jquery-ui.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Libraries\jquery.blockUI.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\JavaScript\Libraries\less.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\Easy\Level1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\Easy\Level2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\Easy\Level3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 100.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 146.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 147.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 152.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 154.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 3.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 60.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 61.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 62.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 64.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 65.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 66.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 70.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 71.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 72.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 74.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 75.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 76.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 77.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\microban\microban 78.gam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level0.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level10.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level11.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level12.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level13.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level14.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level15.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level16.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level17.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level18.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level19.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level20.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level21.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level22.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level23.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level24.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level25.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level26.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level27.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level28.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level29.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level30.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level31.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level32.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level33.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level34.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level35.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level36.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level37.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level38.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level39.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level40.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level5.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level6.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level7.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level8.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Levels\MicroCosmos\level9.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\Game.less.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_flat_0_aaaaaa_40x100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_flat_75_ffffff_40x100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_glass_55_fbf9ee_1x400.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_glass_65_ffffff_1x400.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_glass_75_dadada_1x400.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_glass_75_e6e6e6_1x400.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_glass_95_fef1ec_1x400.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-icons_222222_256x240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-icons_2e83ff_256x240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-icons_454545_256x240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-icons_888888_256x240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\images\ui-icons_cd0a0a_256x240.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\jquery-ui.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\jquery-ui.structure.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Styles\jquery-ui.theme.min.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Views\Game.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Views\LevelSelector.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Views\Menu.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
